@@ -7,7 +7,7 @@
   <title>Runevakar | Official Website</title>
 
   <meta name="description"
-        content="Runevakar – Nordic music from the world of Aldryn. Music, videos, the band, The Chronicles of Aldryn and more.">
+        content="Runevakar – Nordic music from the world of Aldryn. Music, videos, band, The Chronicles of Aldryn and more.">
 
   <link rel="alternate" hreflang="de" href="https://runevakar.de/">
   <link rel="alternate" hreflang="en" href="https://runevakar.de/en.html">
@@ -23,7 +23,6 @@
 
     html {
       scroll-behavior: smooth;
-      scroll-padding-top: 75px;
     }
 
     body {
@@ -42,7 +41,7 @@
       left: 0;
       width: 100%;
       z-index: 1000;
-      background: rgba(5,8,10,.90);
+      background: rgba(5,8,10,.92);
       border-bottom: 1px solid rgba(201,170,106,.32);
       backdrop-filter: blur(10px);
     }
@@ -62,7 +61,6 @@
       text-decoration: none;
       font-size: 21px;
       letter-spacing: 4px;
-      color: #f3efe6;
       white-space: nowrap;
     }
 
@@ -90,8 +88,8 @@
       display: flex;
       gap: 5px;
       margin-left: 10px;
-      border-left: 1px solid rgba(201,170,106,.45);
       padding-left: 16px;
+      border-left: 1px solid rgba(201,170,106,.45);
     }
 
     .languages .active {
@@ -104,14 +102,14 @@
 
     .menu-button {
       display: none;
-      cursor: pointer;
       width: 46px;
       height: 46px;
+      cursor: pointer;
       align-items: center;
       justify-content: center;
+      border: 1px solid rgba(201,170,106,.55);
       font-family: Arial, sans-serif;
       font-size: 27px;
-      border: 1px solid rgba(201,170,106,.55);
     }
 
     .mobile-nav {
@@ -121,14 +119,13 @@
     .hero {
       min-height: 100vh;
       min-height: 100svh;
-      position: relative;
 
       background:
         linear-gradient(
           to bottom,
-          rgba(5,8,10,.10) 0%,
-          rgba(5,8,10,.10) 55%,
-          rgba(5,8,10,.83) 88%,
+          rgba(5,8,10,.08) 0%,
+          rgba(5,8,10,.08) 55%,
+          rgba(5,8,10,.84) 88%,
           #070a0c 100%
         ),
         url("25BA1FB1-D878-40A9-8B2D-520396C448F4.png");
@@ -140,6 +137,7 @@
       display: flex;
       align-items: flex-end;
       justify-content: center;
+
       text-align: center;
       padding: 110px 25px 80px;
     }
@@ -157,8 +155,7 @@
     }
 
     h1 {
-      color: #fff;
-      font-size: clamp(48px, 8vw, 90px);
+      font-size: clamp(48px,8vw,90px);
       letter-spacing: 8px;
       font-weight: normal;
       text-shadow: 0 3px 18px rgba(0,0,0,.95);
@@ -166,21 +163,21 @@
 
     .subtitle {
       color: #c9aa6a;
-      font-size: clamp(16px, 2.5vw, 25px);
+      font-size: clamp(16px,2.5vw,25px);
       letter-spacing: 5px;
       margin-top: 15px;
     }
 
     .quote {
       font-style: italic;
-      font-size: clamp(19px, 2.5vw, 27px);
+      font-size: clamp(19px,2.5vw,27px);
       line-height: 1.6;
       margin-top: 55px;
       text-shadow: 0 2px 10px #000;
     }
 
     .section {
-      padding: 105px 25px;
+      padding: 95px 25px;
       text-align: center;
     }
 
@@ -193,7 +190,7 @@
     }
 
     .section-title {
-      font-size: clamp(35px, 6vw, 58px);
+      font-size: clamp(34px,6vw,55px);
       letter-spacing: 5px;
       line-height: 1.1;
       margin-bottom: 14px;
@@ -204,131 +201,62 @@
       font-size: 18px;
       letter-spacing: 4px;
       text-transform: uppercase;
-      margin-bottom: 42px;
+      margin-bottom: 38px;
     }
 
     .section-text {
-      max-width: 820px;
+      max-width: 800px;
       margin: auto;
+      color: #cec9be;
       font-size: 19px;
       line-height: 1.9;
-      color: #cec9be;
     }
 
     .buttons {
-      width: min(100%, 650px);
-      margin: 45px auto 0;
+      width: min(100%,650px);
+      margin: 42px auto 0;
     }
 
     .button {
       display: block;
-      padding: 20px;
       margin: 17px 0;
+      padding: 19px 20px;
       border: 1px solid #9f844f;
-      color: white;
       text-decoration: none;
       letter-spacing: 2px;
       font-weight: bold;
       transition: .25s;
     }
 
-    .button:hover {
+    .button:hover,
+    .small-button:hover {
       background: #9f844f;
       color: #070a0c;
     }
 
-    #video {
-      background:
-        radial-gradient(circle at center, #141b1f 0%, #090d0f 65%, #070a0c 100%);
-      border-top: 1px solid #34302a;
-      border-bottom: 1px solid #34302a;
-    }
-
-    .video-wrapper {
-      width: min(100%, 1000px);
-      margin: 0 auto;
-      aspect-ratio: 16 / 9;
-      border: 1px solid #9f844f;
-      box-shadow: 0 15px 50px rgba(0,0,0,.55);
-      background: #000;
-    }
-
-    .video-wrapper iframe {
-      width: 100%;
-      height: 100%;
-      border: 0;
-    }
-
-    .youtube-button {
-      display: inline-block;
-      margin-top: 35px;
-      padding: 17px 30px;
-      border: 1px solid #9f844f;
-      text-decoration: none;
-      letter-spacing: 2px;
-      font-weight: bold;
-    }
-
-    .band-grid {
-      max-width: 1050px;
-      margin: 50px auto 0;
+    .book-preview {
+      max-width: 980px;
+      margin: 45px auto 0;
       display: grid;
-      grid-template-columns: repeat(5, 1fr);
-      gap: 12px;
-    }
-
-    .member {
-      padding: 30px 15px;
-      background: #0d1215;
-      border: 1px solid rgba(201,170,106,.28);
-    }
-
-    .member h3 {
-      font-size: 19px;
-      letter-spacing: 2px;
-      margin-bottom: 10px;
-    }
-
-    .member p {
-      color: #c9aa6a;
-      font-family: Arial, sans-serif;
-      font-size: 12px;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      line-height: 1.5;
-    }
-
-    .book-box {
-      max-width: 1050px;
-      margin: 50px auto 0;
-      display: grid;
-      grid-template-columns: .8fr 1.2fr;
-      gap: 55px;
+      grid-template-columns: .75fr 1.25fr;
       align-items: center;
+      gap: 50px;
       text-align: left;
     }
 
     .book-cover {
-      width: 100%;
-      max-width: 360px;
-      margin: auto;
       display: block;
+      width: 100%;
+      max-width: 300px;
+      margin: auto;
       border: 1px solid rgba(201,170,106,.55);
       box-shadow: 0 18px 50px rgba(0,0,0,.45);
     }
 
     .book-info h3 {
-      font-size: clamp(28px, 4vw, 43px);
+      font-size: clamp(27px,4vw,42px);
       letter-spacing: 3px;
-      line-height: 1.2;
-      margin-bottom: 10px;
-    }
-
-    .book-subtitle {
-      color: #c9aa6a;
-      letter-spacing: 2px;
-      font-size: 20px;
-      margin-bottom: 30px;
+      margin-bottom: 15px;
     }
 
     .book-info p {
@@ -337,64 +265,46 @@
       line-height: 1.8;
     }
 
-    .coming-soon {
+    .small-button {
       display: inline-block;
       margin-top: 30px;
-      padding: 14px 24px;
+      padding: 15px 25px;
       border: 1px solid #9f844f;
-      color: #c9aa6a;
+      text-decoration: none;
       letter-spacing: 2px;
       font-weight: bold;
-    }
-
-    .gallery-grid {
-      max-width: 1100px;
-      margin: 45px auto 0;
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 18px;
-    }
-
-    .gallery-placeholder {
-      aspect-ratio: 4 / 3;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border: 1px solid rgba(201,170,106,.3);
-      background: linear-gradient(145deg, #11181c, #080b0d);
-      color: #807867;
-      letter-spacing: 2px;
-      font-size: 13px;
-    }
-
-    .shop-box {
-      max-width: 750px;
-      margin: 45px auto 0;
-      padding: 50px 30px;
-      border: 1px solid rgba(201,170,106,.45);
-      background: #0c1114;
-    }
-
-    .shop-box h3 {
-      font-size: 30px;
-      letter-spacing: 4px;
-      margin-bottom: 20px;
-    }
-
-    .shop-box p {
-      color: #cec9be;
-      font-size: 18px;
-      line-height: 1.8;
+      transition: .25s;
     }
 
     footer {
+      padding: 45px 20px;
       text-align: center;
-      padding: 50px 20px;
       border-top: 1px solid #34302a;
-      color: #9e927e;
-      letter-spacing: 2px;
-      font-size: 13px;
       background: #050708;
+      color: #9e927e;
+      font-size: 13px;
+      letter-spacing: 2px;
+    }
+
+    .footer-links {
+      margin-bottom: 20px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .footer-links a {
+      color: #c9aa6a;
+      text-decoration: none;
+      font-family: Arial, sans-serif;
+      font-size: 12px;
+      font-weight: bold;
+      letter-spacing: 1.5px;
+    }
+
+    .footer-links a:hover {
+      color: #f1eee7;
     }
 
     @media (max-width: 850px) {
@@ -422,7 +332,7 @@
         left: 0;
         width: 100%;
         padding: 18px 20px 25px;
-        background: rgba(5,8,10,.98);
+        background: rgba(5,8,10,.99);
         border-bottom: 1px solid rgba(201,170,106,.42);
       }
 
@@ -473,15 +383,12 @@
         background-size: 100% auto;
         background-position: center top;
         background-repeat: no-repeat;
-
         padding: 68vw 18px 55px;
-        align-items: flex-start;
       }
 
       .runes {
         font-size: 16px;
         letter-spacing: 8px;
-        margin-bottom: 15px;
       }
 
       h1 {
@@ -501,41 +408,30 @@
       }
 
       .section {
-        padding: 75px 20px;
+        padding: 70px 20px;
       }
 
       .section-title {
         font-size: 34px;
       }
 
-      .section-kicker {
-        font-size: 15px;
-      }
-
       .section-text {
         font-size: 18px;
       }
 
-      .band-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .book-box {
+      .book-preview {
         grid-template-columns: 1fr;
         gap: 35px;
         text-align: center;
       }
 
       .book-cover {
-        max-width: 300px;
+        max-width: 270px;
       }
 
-      .gallery-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .youtube-button {
-        width: 100%;
+      .footer-links {
+        flex-direction: column;
+        gap: 12px;
       }
     }
   </style>
@@ -546,16 +442,16 @@
 <header class="topbar">
   <div class="nav-inner">
 
-    <a href="#start" class="brand">RUNEVAKAR</a>
+    <a href="/en.html" class="brand">RUNEVAKAR</a>
 
     <nav class="desktop-nav">
-      <a href="#music">Music</a>
-      <a href="#video">Videos</a>
-      <a href="#band">Band</a>
-      <a href="#aldryn">Aldryn</a>
-      <a href="#book">Book</a>
-      <a href="#gallery">Gallery</a>
-      <a href="#shop">Shop</a>
+      <a href="/music.html">Music</a>
+      <a href="/videos.html">Videos</a>
+      <a href="/band.html">Band</a>
+      <a href="/aldryn.html">Aldryn</a>
+      <a href="/book.html">Book</a>
+      <a href="/gallery.html">Gallery</a>
+      <a href="/shop.html">Shop</a>
 
       <div class="languages">
         <a href="/">DE</a>
@@ -571,13 +467,13 @@
     </label>
 
     <nav class="mobile-nav">
-      <a href="#music">Music</a>
-      <a href="#video">Videos</a>
-      <a href="#band">Band</a>
-      <a href="#aldryn">Aldryn</a>
-      <a href="#book">Book</a>
-      <a href="#gallery">Gallery</a>
-      <a href="#shop">Shop</a>
+      <a href="/music.html">Music</a>
+      <a href="/videos.html">Videos</a>
+      <a href="/band.html">Band</a>
+      <a href="/aldryn.html">Aldryn</a>
+      <a href="/book.html">Book</a>
+      <a href="/gallery.html">Gallery</a>
+      <a href="/shop.html">Shop</a>
 
       <div class="mobile-languages">
         <a href="/">DE</a>
@@ -589,7 +485,9 @@
   </div>
 </header>
 
-<section class="hero" id="start">
+
+<section class="hero">
+
   <div class="hero-content">
 
     <div class="runes">
@@ -608,9 +506,11 @@
     </div>
 
   </div>
+
 </section>
 
-<section class="section dark" id="music">
+
+<section class="section dark">
 
   <h2 class="section-title">
     CHRONICLES OF ALDRYN
@@ -621,75 +521,40 @@
   </div>
 
   <p class="section-text">
-    Enter the world of Aldryn through powerful Nordic soundscapes,
-    cinematic storytelling and songs about journeys, loyalty,
-    loss and hope.
+    Powerful Nordic soundscapes, cinematic storytelling
+    and stories from the world of Aldryn.
   </p>
 
   <div class="buttons">
 
     <a class="button"
        href="https://open.spotify.com/intl-de/album/4clftkIcRSf660FCGVtqnO"
-       target="_blank">
+       target="_blank"
+       rel="noopener noreferrer">
       SPOTIFY
     </a>
 
     <a class="button"
-       href="https://music.apple.com/de/album/chronicles-of-aldryn/6795321758"
-       target="_blank">
-      APPLE MUSIC
-    </a>
-
-    <a class="button"
-       href="https://music.amazon.de/albums/B0HBT8R8VP"
-       target="_blank">
-      AMAZON MUSIC
-    </a>
-
-    <a class="button"
        href="https://distrokid.com/hyperfollow/runevakar/chronicles-of-aldryn/"
-       target="_blank">
-      ALL PLATFORMS
+       target="_blank"
+       rel="noopener noreferrer">
+      LISTEN TO THE ALBUM
+    </a>
+
+    <a class="button"
+       href="/music.html">
+      MORE MUSIC
     </a>
 
   </div>
 
 </section>
 
-<section class="section" id="video">
+
+<section class="section dark-alt">
 
   <h2 class="section-title">
-    LATEST MUSIC VIDEO
-  </h2>
-
-  <div class="section-kicker">
-    RUNEVAKAR · LEGENDS NEVER SLEEP
-  </div>
-
-  <div class="video-wrapper">
-
-    <iframe
-      src="https://www.youtube-nocookie.com/embed/waYs0XfP2HY"
-      title="Runevakar – Legends Never Sleep"
-      loading="lazy"
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-      allowfullscreen>
-    </iframe>
-
-  </div>
-
-  <a class="youtube-button"
-     href="https://youtu.be/waYs0XfP2HY"
-     target="_blank">
-    WATCH ON YOUTUBE
-  </a>
-
-</section>
-
-<section class="section dark-alt" id="band">
-
-  <h2 class="section-title">
-    THE BAND
+    RUNEVAKAR
   </h2>
 
   <div class="section-kicker">
@@ -697,100 +562,51 @@
   </div>
 
   <p class="section-text">
-    Runevakar brings together five musicians and one shared world.
-    Nordic soundscapes, powerful voices and cinematic storytelling
-    lead deep into Aldryn.
+    Five musicians. One shared world.
+    Runevakar combines Nordic soundscapes,
+    powerful voices and cinematic storytelling
+    with the stories of Aldryn.
   </p>
 
-  <div class="band-grid">
-
-    <div class="member">
-      <h3>LIV SKOVGAARD</h3>
-      <p>Lead Vocals</p>
-    </div>
-
-    <div class="member">
-      <h3>ERIK HALDOR</h3>
-      <p>Lead Male Vocals</p>
-    </div>
-
-    <div class="member">
-      <h3>ASTRID EIR</h3>
-      <p>Female Vocals</p>
-    </div>
-
-    <div class="member">
-      <h3>SØREN FALK</h3>
-      <p>Drums</p>
-    </div>
-
-    <div class="member">
-      <h3>LEIF STORM</h3>
-      <p>Bass</p>
-    </div>
-
-  </div>
+  <a class="small-button" href="/band.html">
+    DISCOVER THE BAND
+  </a>
 
 </section>
 
-<section class="section dark" id="aldryn">
 
-  <h2 class="section-title">
-    ENTER ALDRYN
-  </h2>
-
-  <div class="section-kicker">
-    THE WORLD BEHIND THE MUSIC
-  </div>
-
-  <p class="section-text">
-    Aldryn is more than a setting.
-    It is the world behind Runevakar:
-    a place of northern seas, ancient roads,
-    forgotten stories and journeys shaped by those
-    who refuse to turn back.
-  </p>
-
-</section>
-
-<section class="section dark-alt" id="book">
+<section class="section dark">
 
   <h2 class="section-title">
     THE CHRONICLES OF ALDRYN
   </h2>
 
   <div class="section-kicker">
-    THE WORLD BEHIND THE MUSIC BECOMES A STORY
+    COMING SOON AS A NOVEL
   </div>
 
-  <div class="book-box">
+  <div class="book-preview">
 
     <img
       src="1F8ED87F-2517-45B9-9BD1-8FAF152F58F0.png"
-      alt="Book cover The Chronicles of Aldryn – The Last Light of Norðr"
+      alt="The Chronicles of Aldryn – Das letzte Licht von Norðr"
       class="book-cover">
 
     <div class="book-info">
 
       <h3>
-        THE LAST LIGHT OF NORÐR
+        DAS LETZTE LICHT VON NORÐR
       </h3>
 
-      <div class="book-subtitle">
-        A novel by Timo Finsterbusch
-      </div>
-
       <p>
+        The world behind the music becomes a story.
         A journey to Aldryn, into a world of ancient legends,
-        dark sails and a secret that should have been forgotten long ago.
-        <br><br>
-        The world behind the music of Runevakar unfolds for the first time
-        as a novel.
+        black sails and secrets that should have been forgotten long ago.
       </p>
 
-      <div class="coming-soon">
-        COMING SOON
-      </div>
+      <a class="small-button" href="/book.html">
+        DISCOVER THE BOOK
+      </a>
 
     </div>
 
@@ -798,72 +614,16 @@
 
 </section>
 
-<section class="section dark" id="gallery">
-
-  <h2 class="section-title">
-    GALLERY
-  </h2>
-
-  <div class="section-kicker">
-    RUNEVAKAR · ALDRYN · BEHIND THE SCENES
-  </div>
-
-  <p class="section-text">
-    Images from the world of Runevakar, Aldryn,
-    the band and our music videos.
-  </p>
-
-  <div class="gallery-grid">
-
-    <div class="gallery-placeholder">
-      GALLERY IMAGE 1
-    </div>
-
-    <div class="gallery-placeholder">
-      GALLERY IMAGE 2
-    </div>
-
-    <div class="gallery-placeholder">
-      GALLERY IMAGE 3
-    </div>
-
-  </div>
-
-</section>
-
-<section class="section dark-alt" id="shop">
-
-  <h2 class="section-title">
-    RUNEVAKAR STORE
-  </h2>
-
-  <div class="section-kicker">
-    COMING SOON
-  </div>
-
-  <div class="shop-box">
-
-    <h3>
-      RUNEVAKAR.STORE
-    </h3>
-
-    <p>
-      Music, books and selected items from the world
-      of Runevakar and Aldryn.
-      <br><br>
-      The official store is currently being prepared.
-    </p>
-
-    <div class="coming-soon">
-      COMING SOON
-    </div>
-
-  </div>
-
-</section>
 
 <footer>
+
+  <div class="footer-links">
+    <a href="/impressum.html">LEGAL NOTICE</a>
+    <a href="/datenschutz.html">PRIVACY POLICY</a>
+  </div>
+
   © 2026 RUNEVAKAR · OFFICIAL WEBSITE
+
 </footer>
 
 </body>
