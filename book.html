@@ -1,0 +1,782 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Die Chroniken von Aldryn | Runevakar</title>
+
+<meta name="description"
+content="Die Chroniken von Aldryn – Das letzte Licht von Norðr. Ein Roman von Timo Finsterbusch aus der Welt hinter der Musik von Runevakar.">
+
+<style>
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #070a0c;
+  color: #f1eee7;
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+a {
+  color: inherit;
+}
+
+/* NAVIGATION */
+
+.topbar {
+  background: rgba(5,8,10,.97);
+  border-bottom: 1px solid rgba(201,170,106,.32);
+}
+
+.nav-inner {
+  max-width: 1400px;
+  margin: auto;
+  min-height: 70px;
+  padding: 0 25px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 25px;
+}
+
+.brand {
+  text-decoration: none;
+  font-size: 21px;
+  letter-spacing: 4px;
+  white-space: nowrap;
+}
+
+.nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  align-items: center;
+}
+
+.nav a {
+  color: #d5d0c5;
+  text-decoration: none;
+  font-family: Arial, sans-serif;
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+.nav a:hover,
+.nav .active {
+  color: #c9aa6a;
+}
+
+/* HERO */
+
+.book-hero {
+  min-height: 82vh;
+  display: flex;
+  align-items: center;
+  padding: 85px 25px;
+
+  background:
+    radial-gradient(circle at 25% 40%, rgba(47,66,75,.42), transparent 35%),
+    linear-gradient(to bottom, #11191d 0%, #080b0d 75%, #070a0c 100%);
+}
+
+.hero-inner {
+  max-width: 1100px;
+  width: 100%;
+  margin: auto;
+  display: grid;
+  grid-template-columns: .75fr 1.25fr;
+  gap: 70px;
+  align-items: center;
+}
+
+.book-cover {
+  width: 100%;
+  max-width: 390px;
+  margin: auto;
+  display: block;
+  border: 1px solid rgba(201,170,106,.65);
+
+  box-shadow:
+    0 25px 70px rgba(0,0,0,.7),
+    0 0 40px rgba(201,170,106,.08);
+}
+
+.hero-text .eyebrow {
+  color: #c9aa6a;
+  font-family: Arial, sans-serif;
+  font-size: 13px;
+  font-weight: bold;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  margin-bottom: 22px;
+}
+
+.hero-text h1 {
+  font-size: clamp(39px,6vw,68px);
+  letter-spacing: 5px;
+  line-height: 1.05;
+  margin-bottom: 14px;
+}
+
+.hero-text h2 {
+  color: #c9aa6a;
+  font-size: clamp(24px,4vw,38px);
+  font-weight: normal;
+  letter-spacing: 2px;
+  margin-bottom: 28px;
+}
+
+.author {
+  color: #d3cec2;
+  font-size: 18px;
+  letter-spacing: 2px;
+  margin-bottom: 35px;
+}
+
+.hero-text p {
+  max-width: 650px;
+  color: #cec9be;
+  font-size: 19px;
+  line-height: 1.85;
+}
+
+.release {
+  display: inline-block;
+  margin-top: 35px;
+  padding: 15px 24px;
+  border: 1px solid #9f844f;
+  color: #c9aa6a;
+  font-family: Arial, sans-serif;
+  font-size: 13px;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+/* SEKTIONEN */
+
+.section {
+  padding: 95px 25px;
+}
+
+.section-inner {
+  max-width: 950px;
+  margin: auto;
+}
+
+.center {
+  text-align: center;
+}
+
+.dark {
+  background: #080b0d;
+}
+
+.dark-alt {
+  background: #0b0f12;
+}
+
+.section h2 {
+  font-size: clamp(34px,6vw,53px);
+  letter-spacing: 5px;
+  line-height: 1.15;
+  margin-bottom: 18px;
+}
+
+.kicker {
+  color: #c9aa6a;
+  font-family: Arial, sans-serif;
+  font-size: 13px;
+  font-weight: bold;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  margin-bottom: 38px;
+}
+
+.text {
+  color: #cec9be;
+  font-size: 19px;
+  line-height: 1.9;
+}
+
+/* GESCHICHTE */
+
+.story {
+  max-width: 820px;
+  margin: auto;
+}
+
+.story p + p {
+  margin-top: 25px;
+}
+
+.story-opening {
+  margin-bottom: 35px;
+  color: #ddd7ca;
+  font-size: 25px;
+  line-height: 1.7;
+  font-style: italic;
+}
+
+/* FEATURES */
+
+.features {
+  max-width: 1050px;
+  margin: 50px auto 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.feature {
+  padding: 35px 25px;
+  border: 1px solid rgba(201,170,106,.25);
+  background: #0b1013;
+}
+
+.feature-number {
+  color: #75674c;
+  font-family: Arial, sans-serif;
+  font-size: 12px;
+  letter-spacing: 3px;
+  margin-bottom: 14px;
+}
+
+.feature h3 {
+  font-size: 22px;
+  letter-spacing: 2px;
+  margin-bottom: 15px;
+}
+
+.feature p {
+  color: #bfb9ad;
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+/* MUSIK UND ROMAN */
+
+.music-box {
+  max-width: 850px;
+  margin: 45px auto 0;
+  padding: 45px 35px;
+  border-top: 1px solid rgba(201,170,106,.3);
+  border-bottom: 1px solid rgba(201,170,106,.3);
+  text-align: center;
+}
+
+.music-box p {
+  color: #cec9be;
+  font-size: 18px;
+  line-height: 1.8;
+}
+
+.button {
+  display: inline-block;
+  margin-top: 30px;
+  padding: 16px 28px;
+  border: 1px solid #9f844f;
+  text-decoration: none;
+  font-family: Arial, sans-serif;
+  font-size: 13px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  transition: .25s;
+}
+
+.button:hover {
+  background: #9f844f;
+  color: #070a0c;
+}
+
+/* LESEPROBE */
+
+.preview-box {
+  max-width: 780px;
+  margin: 45px auto 0;
+  padding: 45px 30px;
+  border: 1px solid rgba(201,170,106,.35);
+
+  background:
+    radial-gradient(circle at top, #141c20, #090c0e 75%);
+
+  text-align: center;
+}
+
+.preview-box h3 {
+  font-size: 27px;
+  letter-spacing: 3px;
+  margin-bottom: 20px;
+}
+
+.preview-box p {
+  color: #bfb9ad;
+  font-size: 17px;
+  line-height: 1.8;
+}
+
+.preview-label {
+  display: inline-block;
+  margin-top: 28px;
+  padding: 12px 20px;
+  border: 1px solid #66583d;
+  color: #9e8a62;
+  font-family: Arial, sans-serif;
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+/* FOOTER */
+
+footer {
+  padding: 45px 20px;
+  text-align: center;
+  border-top: 1px solid #34302a;
+  background: #050708;
+  color: #9e927e;
+  letter-spacing: 2px;
+  font-size: 13px;
+}
+
+.footer-links {
+  margin-bottom: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.footer-links a {
+  color: #c9aa6a;
+  text-decoration: none;
+  font-family: Arial, sans-serif;
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 1.5px;
+}
+
+.footer-links a:hover {
+  color: #f1eee7;
+}
+
+/* MOBIL */
+
+@media(max-width:760px) {
+
+  .nav-inner {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .nav {
+    justify-content: center;
+    gap: 14px;
+  }
+
+  .nav a {
+    font-size: 11px;
+  }
+
+  .book-hero {
+    padding: 65px 20px;
+  }
+
+  .hero-inner {
+    grid-template-columns: 1fr;
+    gap: 45px;
+    text-align: center;
+  }
+
+  .book-cover {
+    max-width: 280px;
+  }
+
+  .hero-text p {
+    font-size: 18px;
+  }
+
+  .section {
+    padding: 70px 20px;
+  }
+
+  .text {
+    font-size: 18px;
+  }
+
+  .story-opening {
+    font-size: 21px;
+  }
+
+  .features {
+    grid-template-columns: 1fr;
+  }
+
+  .music-box,
+  .preview-box {
+    padding: 35px 22px;
+  }
+
+  .footer-links {
+    flex-direction: column;
+    gap: 12px;
+  }
+}
+
+</style>
+</head>
+
+<body>
+
+<header class="topbar">
+
+<div class="nav-inner">
+
+<a href="/" class="brand">
+RUNEVAKAR
+</a>
+
+<nav class="nav">
+
+<a href="/">
+Start
+</a>
+
+<a href="/music.html">
+Musik
+</a>
+
+<a href="/videos.html">
+Videos
+</a>
+
+<a href="/band.html">
+Band
+</a>
+
+<a href="/aldryn.html">
+Aldryn
+</a>
+
+<a href="/book.html" class="active">
+Buch
+</a>
+
+<a href="/gallery.html">
+Galerie
+</a>
+
+<a href="/shop.html">
+Shop
+</a>
+
+</nav>
+
+</div>
+
+</header>
+
+
+<section class="book-hero">
+
+<div class="hero-inner">
+
+<img
+src="1F8ED87F-2517-45B9-9BD1-8FAF152F58F0.png"
+alt="Die Chroniken von Aldryn – Das letzte Licht von Norðr"
+class="book-cover">
+
+<div class="hero-text">
+
+<div class="eyebrow">
+DIE CHRONIKEN VON ALDRYN
+</div>
+
+<h1>
+DAS LETZTE LICHT
+</h1>
+
+<h2>
+VON NORÐR
+</h2>
+
+<div class="author">
+Ein Roman von Timo Finsterbusch
+</div>
+
+<p>
+Jenseits der bekannten See beginnt eine Reise,
+die niemand geplant hat.
+Eine Geschichte über Verlust, Hoffnung,
+alte Geheimnisse und die Frage,
+wie weit ein Mensch gehen muss,
+wenn die vertraute Welt hinter ihm zerbricht.
+</p>
+
+<div class="release">
+DEMNÄCHST ERHÄLTLICH
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<section class="section dark">
+
+<div class="section-inner story">
+
+<div class="kicker center">
+DIE GESCHICHTE BEGINNT
+</div>
+
+<p class="story-opening">
+Manche Reisen beginnen mit einem Ziel.
+Andere beginnen in dem Moment,
+in dem es keinen Weg zurück mehr gibt.
+</p>
+
+<p class="text">
+Einar kennt das Meer, seine Stürme und seine Launen.
+Doch als sich über Norðr eine Bedrohung erhebt,
+die größer ist als alles, was er je erlebt hat,
+wird aus einem vertrauten Leben eine Reise ins Ungewisse.
+</p>
+
+<p class="text">
+Gemeinsam mit jenen, die ihm geblieben sind,
+führt sein Weg fort von der bekannten Küste,
+über gefährliche Pfade und dunkle Gewässer
+bis zu einer Insel, von der mehr Legenden erzählen
+als Menschen je gesehen haben:
+<strong>Aldryn.</strong>
+</p>
+
+<p class="text">
+Doch nicht jeder sucht Aldryn aus demselben Grund.
+Und manche Geheimnisse wurden nicht vergessen.
+Sie wurden verborgen.
+</p>
+
+</div>
+
+</section>
+
+
+<section class="section dark-alt">
+
+<div class="section-inner center">
+
+<h2>
+WAS DICH ERWARTET
+</h2>
+
+<div class="kicker">
+EINE REISE NACH ALDRYN
+</div>
+
+<div class="features">
+
+<div class="feature">
+
+<div class="feature-number">
+01
+</div>
+
+<h3>
+EINE NORDISCHE WELT
+</h3>
+
+<p>
+Raue Küsten, dunkle Wälder,
+alte Straßen, Berge und ein Meer,
+das gleichzeitig Grenze und Weg ist.
+</p>
+
+</div>
+
+
+<div class="feature">
+
+<div class="feature-number">
+02
+</div>
+
+<h3>
+MENSCHEN STATT HELDEN
+</h3>
+
+<p>
+Keine unverwundbaren Legenden,
+sondern Menschen, die Entscheidungen treffen,
+zweifeln, verlieren und trotzdem weitergehen.
+</p>
+
+</div>
+
+
+<div class="feature">
+
+<div class="feature-number">
+03
+</div>
+
+<h3>
+GEHEIMNISSE VON ALDRYN
+</h3>
+
+<p>
+Ein Kompass, eine verborgene Karte,
+alte Wächter und Spuren einer Geschichte,
+die noch lange nicht zu Ende erzählt ist.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<section class="section dark">
+
+<div class="section-inner center">
+
+<h2>
+EINE WELT.<br>
+ZWEI WEGE.
+</h2>
+
+<div class="kicker">
+ROMAN &amp; MUSIK
+</div>
+
+<p class="text">
+Aldryn lebt nicht nur zwischen den Seiten des Romans.
+Die Welt, ihre Landschaften, Geschichten und Stimmungen
+bilden zugleich die Grundlage für die Musik von Runevakar.
+</p>
+
+<div class="music-box">
+
+<p>
+Das Album <strong>Chronicles of Aldryn</strong>
+begleitet die Welt des Romans musikalisch.
+Songs wie „Black Sails“, „Northbound“
+oder „The Last Light of Norðr“
+greifen Orte, Gefühle und Motive der Geschichte auf,
+ohne den Roman einfach nachzuerzählen.
+</p>
+
+<a
+class="button"
+href="/music.html">
+CHRONICLES OF ALDRYN ANHÖREN
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+
+<section class="section dark-alt">
+
+<div class="section-inner center">
+
+<h2>
+LESEPROBE
+</h2>
+
+<div class="kicker">
+BALD ÖFFNET SICH DAS TOR
+</div>
+
+<div class="preview-box">
+
+<h3>
+DER ERSTE BLICK NACH NORÐR
+</h3>
+
+<p>
+Eine Leseprobe aus
+„Die Chroniken von Aldryn –
+Das letzte Licht von Norðr“
+wird hier vor der Veröffentlichung verfügbar sein.
+</p>
+
+<div class="preview-label">
+FOLGT IN KÜRZE
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<section class="section dark">
+
+<div class="section-inner center">
+
+<h2>
+DAS LETZTE LICHT VON NORÐR
+</h2>
+
+<div class="kicker">
+DIE CHRONIKEN VON ALDRYN
+</div>
+
+<p class="text">
+Der Roman befindet sich auf dem Weg zur Veröffentlichung.
+Sobald das Buch erhältlich ist,
+findest du an dieser Stelle alle Informationen
+sowie den direkten Bestelllink.
+</p>
+
+<div class="release">
+DEMNÄCHST ERHÄLTLICH
+</div>
+
+</div>
+
+</section>
+
+
+<footer>
+
+<div class="footer-links">
+
+<a href="/impressum.html">
+IMPRESSUM
+</a>
+
+<a href="/datenschutz.html">
+DATENSCHUTZ
+</a>
+
+</div>
+
+© 2026 RUNEVAKAR · OFFIZIELLE WEBSITE
+
+</footer>
+
+</body>
+</html>
