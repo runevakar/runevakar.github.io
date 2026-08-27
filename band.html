@@ -147,6 +147,71 @@
       line-height: 1.8;
     }
 
+    /* LIV GALERIE */
+
+    .liv-gallery-button {
+      display: block;
+      width: 100%;
+      margin-top: 28px;
+      padding: 15px 18px;
+      background: transparent;
+      color: #c9aa6a;
+      border: 1px solid rgba(201,170,106,.55);
+      font-family: Arial, sans-serif;
+      font-size: 13px;
+      font-weight: bold;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: .25s;
+    }
+
+    .liv-gallery-button:hover {
+      background: rgba(201,170,106,.08);
+      color: #f1eee7;
+    }
+
+    .liv-gallery {
+      display: none;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 22px;
+      margin-top: 28px;
+    }
+
+    .liv-gallery.open {
+      display: grid;
+    }
+
+    .liv-photo {
+      background: #080b0d;
+      border: 1px solid rgba(201,170,106,.30);
+      overflow: hidden;
+    }
+
+    .liv-photo img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .liv-photo figcaption {
+      padding: 18px 15px 20px;
+      text-align: center;
+      color: #ddd7ca;
+      font-size: 18px;
+      line-height: 1.55;
+    }
+
+    .liv-photo figcaption strong {
+      display: block;
+      margin-bottom: 7px;
+      color: #c9aa6a;
+      font-family: Arial, sans-serif;
+      font-size: 15px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
     .band-quote {
       max-width: 900px;
       margin: 0 auto 100px;
@@ -245,6 +310,25 @@
         font-size: 18px;
       }
 
+      .liv-gallery {
+        grid-template-columns: 1fr;
+      }
+
+      .liv-photo figcaption {
+        font-size: 19px;
+        line-height: 1.6;
+        padding: 18px 16px 22px;
+      }
+
+      .liv-photo figcaption strong {
+        font-size: 16px;
+      }
+
+      .liv-gallery-button {
+        font-size: 14px;
+        padding: 16px;
+      }
+
       .band-quote {
         margin: 0 20px 80px;
       }
@@ -269,37 +353,14 @@
 
     <nav class="nav">
 
-      <a href="/">
-        Start
-      </a>
-
-      <a href="/music.html">
-        Musik
-      </a>
-
-      <a href="/videos.html">
-        Videos
-      </a>
-
-      <a href="/band.html" class="active">
-        Band
-      </a>
-
-      <a href="/aldryn.html">
-        Aldryn
-      </a>
-
-      <a href="/book.html">
-        Buch
-      </a>
-
-      <a href="/gallery.html">
-        Galerie
-      </a>
-
-      <a href="/shop.html">
-        Shop
-      </a>
+      <a href="/">Start</a>
+      <a href="/music.html">Musik</a>
+      <a href="/videos.html">Videos</a>
+      <a href="/band.html" class="active">Band</a>
+      <a href="/aldryn.html">Aldryn</a>
+      <a href="/book.html">Buch</a>
+      <a href="/gallery.html">Galerie</a>
+      <a href="/shop.html">Shop</a>
 
     </nav>
 
@@ -310,9 +371,7 @@
 
 <section class="page-header">
 
-  <h1>
-    DIE BAND
-  </h1>
+  <h1>DIE BAND</h1>
 
   <p>
     FIVE VOICES · ONE JOURNEY · ONE WORLD
@@ -351,6 +410,72 @@
       Höhepunkten trägt sie die Geschichten von Aldryn durch
       Hoffnung, Verlust und Aufbruch.
     </p>
+
+    <button
+      class="liv-gallery-button"
+      id="livGalleryButton"
+      onclick="toggleLivGallery()">
+      Bilder von Liv ansehen
+    </button>
+
+    <div class="liv-gallery" id="livGallery">
+
+      <figure class="liv-photo">
+
+        <img
+          src="/B4CE8D40-389C-45A4-A94D-0E94E1C4E367.png"
+          alt="Liv Skovgaard unterwegs im Tourbus">
+
+        <figcaption>
+          <strong>Unterwegs</strong>
+          Zwischen zwei Städten, irgendwo auf dem Weg.
+        </figcaption>
+
+      </figure>
+
+
+      <figure class="liv-photo">
+
+        <img
+          src="/A712B3E6-6110-42FE-8B6B-8ABCB0FF6830.png"
+          alt="Liv Skovgaard in Bergen">
+
+        <figcaption>
+          <strong>Bergen</strong>
+          Regen, Geschichten und ein kurzer Moment für sich.
+        </figcaption>
+
+      </figure>
+
+
+      <figure class="liv-photo">
+
+        <img
+          src="/825B0847-B70D-4AF3-87EE-D20243700AC3.png"
+          alt="Liv Skovgaard im Studio">
+
+        <figcaption>
+          <strong>Im Studio</strong>
+          Zwischen Aufnahme, Lachen und dem nächsten Song.
+        </figcaption>
+
+      </figure>
+
+
+      <figure class="liv-photo">
+
+        <img
+          src="/5D8EA9C2-CD2F-4A43-A5D7-EF95F313F755.png"
+          alt="Liv Skovgaard vor einer Show">
+
+        <figcaption>
+          <strong>Vor der Show</strong>
+          Ein Moment der Ruhe, bevor die Bühne ruft.
+        </figcaption>
+
+      </figure>
+
+    </div>
 
   </article>
 
@@ -460,6 +585,23 @@
   © 2026 RUNEVAKAR · OFFIZIELLE WEBSITE
 
 </footer>
+
+
+<script>
+  function toggleLivGallery() {
+
+    const gallery = document.getElementById("livGallery");
+    const button = document.getElementById("livGalleryButton");
+
+    gallery.classList.toggle("open");
+
+    if (gallery.classList.contains("open")) {
+      button.textContent = "Bilder von Liv schließen";
+    } else {
+      button.textContent = "Bilder von Liv ansehen";
+    }
+  }
+</script>
 
 </body>
 </html>
