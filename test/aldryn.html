@@ -72,11 +72,9 @@
     .nav a {
       color: #d5d0c5;
       text-decoration: none;
-
       font-family: Arial, sans-serif;
       font-size: 12px;
       font-weight: bold;
-
       letter-spacing: 1.5px;
       text-transform: uppercase;
     }
@@ -141,14 +139,11 @@
 
     .kicker {
       color: #c9aa6a;
-
       font-family: Arial, sans-serif;
       font-size: 12px;
       font-weight: bold;
-
       letter-spacing: 4px;
       text-transform: uppercase;
-
       margin-bottom: 35px;
     }
 
@@ -195,9 +190,7 @@
     .section-text {
       max-width: 850px;
       margin: auto;
-
       color: #cec9be;
-
       font-size: 18px;
       line-height: 1.9;
     }
@@ -217,7 +210,6 @@
 
     .place {
       position: relative;
-
       min-height: 230px;
 
       display: flex;
@@ -239,24 +231,48 @@
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
+
+      cursor: pointer;
+      transition:
+        transform .25s,
+        border-color .25s,
+        box-shadow .25s;
+    }
+
+    .place:hover {
+      transform: translateY(-4px);
+      border-color: rgba(201,170,106,.70);
+
+      box-shadow:
+        0 15px 35px rgba(0,0,0,.45);
+    }
+
+    .place.active {
+      border-color: #c9aa6a;
+
+      box-shadow:
+        0 0 0 1px rgba(201,170,106,.25),
+        0 15px 35px rgba(0,0,0,.45);
     }
 
 
-    /* LANDKARTE ALDRYN */
+    /* LANDKARTE */
 
     .place-land-aldryn {
       background-image:
         linear-gradient(
           to bottom,
-          rgba(5,8,10,.05) 0%,
-          rgba(5,8,10,.15) 42%,
-          rgba(5,8,10,.92) 100%
+          rgba(5,8,10,.02) 0%,
+          rgba(5,8,10,.08) 42%,
+          rgba(5,8,10,.90) 100%
         ),
         url("/Die%20L%C3%A4nder%20von%20Aldryn.png");
 
-      background-size: cover;
-      background-position: center;
+      background-size: auto 100%;
+      background-position: 52% center;
       background-repeat: no-repeat;
+
+      background-color: #15110b;
     }
 
 
@@ -279,9 +295,7 @@
     .place-inner {
       position: relative;
       z-index: 2;
-
       width: 100%;
-
       text-align: center;
     }
 
@@ -312,6 +326,117 @@
       text-shadow:
         0 2px 5px #000,
         0 0 12px #000;
+    }
+
+
+    /* =========================
+       UNTERMENÜ ORTE
+       ========================= */
+
+    .place-details {
+      display: none;
+
+      grid-column: 1 / -1;
+
+      margin-top: 20px;
+
+      border: 1px solid rgba(201,170,106,.32);
+
+      background:
+        radial-gradient(
+          circle at top,
+          rgba(35,46,51,.55),
+          #080b0d 70%
+        );
+
+      text-align: left;
+    }
+
+    .place-details.open {
+      display: block;
+    }
+
+    .place-detail {
+      display: none;
+      padding: 50px 55px;
+    }
+
+    .place-detail.active {
+      display: block;
+    }
+
+    .detail-number {
+      color: #8d7952;
+
+      font-family: Arial, sans-serif;
+      font-size: 11px;
+      font-weight: bold;
+
+      letter-spacing: 4px;
+
+      margin-bottom: 15px;
+    }
+
+    .place-detail h3 {
+      color: #f1eee7;
+
+      font-size: clamp(27px,4vw,38px);
+      font-weight: normal;
+
+      letter-spacing: 4px;
+
+      margin-bottom: 10px;
+    }
+
+    .detail-kicker {
+      color: #c9aa6a;
+
+      font-family: Arial, sans-serif;
+      font-size: 11px;
+      font-weight: bold;
+
+      letter-spacing: 3px;
+      text-transform: uppercase;
+
+      margin-bottom: 30px;
+    }
+
+    .place-detail p {
+      max-width: 900px;
+
+      color: #cec9be;
+
+      font-size: 18px;
+      line-height: 1.9;
+    }
+
+    .place-detail p + p {
+      margin-top: 20px;
+    }
+
+    .close-detail {
+      display: inline-block;
+
+      margin-top: 32px;
+      padding: 12px 22px;
+
+      border: 1px solid rgba(201,170,106,.45);
+
+      background: transparent;
+      color: #c9aa6a;
+
+      font-family: Arial, sans-serif;
+      font-size: 11px;
+      font-weight: bold;
+
+      letter-spacing: 2px;
+
+      cursor: pointer;
+    }
+
+    .close-detail:hover {
+      background: rgba(201,170,106,.08);
+      color: #f1eee7;
     }
 
 
@@ -386,9 +511,7 @@
     .path h3 {
       font-size: 27px;
       font-weight: normal;
-
       letter-spacing: 3px;
-
       margin-bottom: 20px;
     }
 
@@ -402,7 +525,6 @@
       display: inline-block;
 
       margin-top: 30px;
-
       padding: 15px 27px;
 
       border: 1px solid #a48955;
@@ -430,6 +552,7 @@
 
     .quote-section {
       padding: 100px 25px;
+
       text-align: center;
 
       background:
@@ -442,6 +565,7 @@
 
     .quote {
       max-width: 850px;
+
       margin: auto;
 
       color: #ddd7ca;
@@ -472,6 +596,7 @@
 
     footer {
       padding: 45px 20px;
+
       text-align: center;
 
       border-top: 1px solid #34302a;
@@ -494,6 +619,7 @@
 
     .footer-links a {
       color: #c9aa6a;
+
       text-decoration: none;
 
       font-family: Arial, sans-serif;
@@ -569,7 +695,24 @@
       }
 
       .place {
-        min-height: 220px;
+        min-height: 210px;
+      }
+
+      .place-land-aldryn {
+        background-size: cover;
+        background-position: center;
+      }
+
+      .place-details {
+        grid-column: auto;
+      }
+
+      .place-detail {
+        padding: 38px 25px;
+      }
+
+      .place-detail p {
+        font-size: 17px;
       }
 
       .mystery-box {
@@ -601,10 +744,6 @@
 <body>
 
 
-<!-- =========================
-     NAVIGATION
-     ========================= -->
-
 <header class="topbar">
 
   <div class="nav-inner">
@@ -615,37 +754,14 @@
 
     <nav class="nav">
 
-      <a href="/test/">
-        Start
-      </a>
-
-      <a href="/test/music.html">
-        Musik
-      </a>
-
-      <a href="/test/videos.html">
-        Videos
-      </a>
-
-      <a href="/test/band.html">
-        Band
-      </a>
-
-      <a href="/test/aldryn.html" class="active">
-        Aldryn
-      </a>
-
-      <a href="/test/book.html">
-        Buch
-      </a>
-
-      <a href="/test/gallery.html">
-        Galerie
-      </a>
-
-      <a href="/test/shop.html">
-        Shop
-      </a>
+      <a href="/test/">Start</a>
+      <a href="/test/music.html">Musik</a>
+      <a href="/test/videos.html">Videos</a>
+      <a href="/test/band.html">Band</a>
+      <a href="/test/aldryn.html" class="active">Aldryn</a>
+      <a href="/test/book.html">Buch</a>
+      <a href="/test/gallery.html">Galerie</a>
+      <a href="/test/shop.html">Shop</a>
 
     </nav>
 
@@ -653,10 +769,6 @@
 
 </header>
 
-
-<!-- =========================
-     ALDRYN TITELBILD
-     ========================= -->
 
 <section class="aldryn-header">
 
@@ -666,10 +778,6 @@
 
 </section>
 
-
-<!-- =========================
-     EINLEITUNG
-     ========================= -->
 
 <section class="intro">
 
@@ -707,10 +815,6 @@
 </section>
 
 
-<!-- =========================
-     ORTE VON ALDRYN
-     ========================= -->
-
 <section class="section dark-alt">
 
   <div class="section-inner center">
@@ -729,12 +833,13 @@
       in der jeder Ort seine eigene Geschichte trägt.
     </p>
 
+
     <div class="places">
 
 
-      <!-- DAS LAND ALDRYN -->
-
-      <div class="place place-land-aldryn">
+      <div
+        class="place place-land-aldryn"
+        onclick="showPlace('land', this)">
 
         <div class="place-inner">
 
@@ -751,9 +856,9 @@
       </div>
 
 
-      <!-- DER HAFEN -->
-
-      <div class="place">
+      <div
+        class="place"
+        onclick="showPlace('hafen', this)">
 
         <div class="place-inner">
 
@@ -770,9 +875,9 @@
       </div>
 
 
-      <!-- DIE STEINHALLE -->
-
-      <div class="place">
+      <div
+        class="place"
+        onclick="showPlace('steinhalle', this)">
 
         <div class="place-inner">
 
@@ -789,9 +894,9 @@
       </div>
 
 
-      <!-- DIE BERGPFADE -->
-
-      <div class="place">
+      <div
+        class="place"
+        onclick="showPlace('bergpfade', this)">
 
         <div class="place-inner">
 
@@ -808,9 +913,9 @@
       </div>
 
 
-      <!-- DIE KÖNIGSSTRASSE -->
-
-      <div class="place">
+      <div
+        class="place"
+        onclick="showPlace('koenigsstrasse', this)">
 
         <div class="place-inner">
 
@@ -827,16 +932,207 @@
       </div>
 
 
+      <!-- UNTERMENÜ -->
+
+      <div class="place-details" id="placeDetails">
+
+
+        <div class="place-detail" id="detail-land">
+
+          <div class="detail-number">
+            01
+          </div>
+
+          <h3>
+            DAS LAND ALDRYN
+          </h3>
+
+          <div class="detail-kicker">
+            JENSEITS DER BEKANNTEN SEE
+          </div>
+
+          <p>
+            Aldryn liegt jenseits jener Gewässer,
+            die für die meisten Menschen das Ende der bekannten Welt markieren.
+            Über lange Zeit lebte das Land vor allem in alten Geschichten,
+            Überlieferungen und Legenden weiter.
+          </p>
+
+          <p>
+            Zwischen rauen Küsten, Gebirgen, Wäldern und alten Straßen
+            entstanden Siedlungen und Wege, deren Geschichte weit zurückreicht.
+            Viele Spuren der Vergangenheit sind noch vorhanden,
+            auch wenn ihre ursprüngliche Bedeutung längst nicht mehr überall bekannt ist.
+          </p>
+
+          <p>
+            Für die Menschen aus Norðr wird Aldryn schließlich
+            von einer Legende zu einem tatsächlichen Ziel.
+            Damit beginnt eine Reise, die nicht nur neue Orte,
+            sondern auch längst verborgene Teile der eigenen Geschichte sichtbar macht.
+          </p>
+
+          <button
+            class="close-detail"
+            onclick="closePlace()">
+            SCHLIESSEN
+          </button>
+
+        </div>
+
+
+        <div class="place-detail" id="detail-hafen">
+
+          <div class="detail-number">
+            02
+          </div>
+
+          <h3>
+            DER HAFEN
+          </h3>
+
+          <div class="detail-kicker">
+            DAS TOR ZUM MEER
+          </div>
+
+          <p>
+            Der Hafen verbindet Aldryn mit dem Meer.
+            Händler, Fischer und Reisende treffen hier aufeinander,
+            während Schiffe zwischen den Küsten und Inseln verkehren.
+          </p>
+
+          <p>
+            Für Neuankömmlinge ist er häufig der erste Ort,
+            an dem Aldryn nicht mehr wie eine Legende wirkt,
+            sondern wie eine lebendige Welt mit eigenen Regeln,
+            Geschichten und Menschen.
+          </p>
+
+          <button
+            class="close-detail"
+            onclick="closePlace()">
+            SCHLIESSEN
+          </button>
+
+        </div>
+
+
+        <div class="place-detail" id="detail-steinhalle">
+
+          <div class="detail-number">
+            03
+          </div>
+
+          <h3>
+            DIE STEINHALLE
+          </h3>
+
+          <div class="detail-kicker">
+            SPUREN EINER ALTEN ZEIT
+          </div>
+
+          <p>
+            Tief im Gestein Aldryns liegt eine Halle,
+            deren Ursprung weit in die Vergangenheit reicht.
+            Säulen, Zeichen und alte Spuren erzählen davon,
+            dass dieser Ort einst eine Bedeutung besaß,
+            die heute nur noch wenige verstehen.
+          </p>
+
+          <p>
+            Die Steinhalle gehört zu jenen Orten,
+            an denen die Geschichte Aldryns nicht durch Worte überliefert wurde,
+            sondern durch das, was die Zeit zurückgelassen hat.
+          </p>
+
+          <button
+            class="close-detail"
+            onclick="closePlace()">
+            SCHLIESSEN
+          </button>
+
+        </div>
+
+
+        <div class="place-detail" id="detail-bergpfade">
+
+          <div class="detail-number">
+            04
+          </div>
+
+          <h3>
+            DIE BERGPFADE
+          </h3>
+
+          <div class="detail-kicker">
+            WEGE DURCH DAS GEBIRGE
+          </div>
+
+          <p>
+            Alte Pfade führen durch die Berge Aldryns.
+            Manche verbinden Siedlungen miteinander,
+            andere verlieren sich zwischen Felsen,
+            Schnee und abgelegenen Tälern.
+          </p>
+
+          <p>
+            Für Reisende sind sie gleichermaßen Weg und Prüfung.
+            Wetter, Höhe und Einsamkeit machen deutlich,
+            dass die Landschaft Aldryns ihren eigenen Rhythmus vorgibt.
+          </p>
+
+          <button
+            class="close-detail"
+            onclick="closePlace()">
+            SCHLIESSEN
+          </button>
+
+        </div>
+
+
+        <div class="place-detail" id="detail-koenigsstrasse">
+
+          <div class="detail-number">
+            05
+          </div>
+
+          <h3>
+            DIE KÖNIGSSTRASSE
+          </h3>
+
+          <div class="detail-kicker">
+            EIN WEG DURCH DIE GESCHICHTE
+          </div>
+
+          <p>
+            Die Königsstraße gehört zu den alten Verbindungen Aldryns.
+            Sie führt durch unterschiedliche Landschaften
+            und verbindet Orte, die seit Generationen Teil der Geschichte des Landes sind.
+          </p>
+
+          <p>
+            Wer ihr folgt, bewegt sich nicht nur durch Aldryn,
+            sondern entlang eines Weges,
+            den bereits viele Menschen vor ihm gegangen sind.
+          </p>
+
+          <button
+            class="close-detail"
+            onclick="closePlace()">
+            SCHLIESSEN
+          </button>
+
+        </div>
+
+
+      </div>
+
     </div>
 
   </div>
 
 </section>
 
-
-<!-- =========================
-     GEHEIMNISSE
-     ========================= -->
 
 <section class="section dark">
 
@@ -879,10 +1175,6 @@
 
 </section>
 
-
-<!-- =========================
-     ALDRYN ERLEBEN
-     ========================= -->
 
 <section class="section dark-alt">
 
@@ -964,10 +1256,6 @@
 </section>
 
 
-<!-- =========================
-     ZITAT
-     ========================= -->
-
 <section class="quote-section">
 
   <p class="quote">
@@ -983,10 +1271,6 @@
 
 </section>
 
-
-<!-- =========================
-     FOOTER
-     ========================= -->
 
 <footer>
 
@@ -1005,6 +1289,90 @@
   © 2026 RUNEVAKAR · OFFIZIELLE WEBSITE
 
 </footer>
+
+
+<script>
+
+function showPlace(placeId, clickedElement) {
+
+  const details = document.getElementById("placeDetails");
+
+  const allDetails =
+    document.querySelectorAll(".place-detail");
+
+  const allPlaces =
+    document.querySelectorAll(".place");
+
+
+  const target =
+    document.getElementById("detail-" + placeId);
+
+
+  if (
+    clickedElement.classList.contains("active") &&
+    details.classList.contains("open")
+  ) {
+
+    closePlace();
+    return;
+  }
+
+
+  allDetails.forEach(function(detail) {
+    detail.classList.remove("active");
+  });
+
+
+  allPlaces.forEach(function(place) {
+    place.classList.remove("active");
+  });
+
+
+  target.classList.add("active");
+  clickedElement.classList.add("active");
+
+  details.classList.add("open");
+
+
+  setTimeout(function() {
+
+    details.scrollIntoView({
+      behavior: "smooth",
+      block: "nearest"
+    });
+
+  }, 100);
+
+}
+
+
+function closePlace() {
+
+  const details =
+    document.getElementById("placeDetails");
+
+  const allDetails =
+    document.querySelectorAll(".place-detail");
+
+  const allPlaces =
+    document.querySelectorAll(".place");
+
+
+  details.classList.remove("open");
+
+
+  allDetails.forEach(function(detail) {
+    detail.classList.remove("active");
+  });
+
+
+  allPlaces.forEach(function(place) {
+    place.classList.remove("active");
+  });
+
+}
+
+</script>
 
 
 </body>
