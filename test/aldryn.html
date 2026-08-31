@@ -574,10 +574,10 @@
     }
 
     /* =========================
-       HINTERGRUNDMUSIK
+       MUSIKPLAYER
        ========================= */
 
-    .music-control {
+    .music-panel {
       position: fixed;
 
       right: 22px;
@@ -585,11 +585,25 @@
 
       z-index: 9999;
 
-      padding: 13px 18px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+
+      padding: 11px 14px;
 
       border: 1px solid rgba(201,170,106,.60);
 
-      background: rgba(5,8,10,.92);
+      background: rgba(5,8,10,.94);
+
+      box-shadow:
+        0 10px 30px rgba(0,0,0,.55);
+
+      backdrop-filter: blur(8px);
+    }
+
+    .music-control {
+      border: none;
+      background: transparent;
       color: #c9aa6a;
 
       font-family: Arial, sans-serif;
@@ -600,25 +614,40 @@
 
       cursor: pointer;
 
-      box-shadow:
-        0 10px 30px rgba(0,0,0,.50);
-
-      transition:
-        background .25s,
-        color .25s,
-        border-color .25s;
+      white-space: nowrap;
     }
 
     .music-control:hover {
-      background: #c9aa6a;
-      color: #070a0c;
-      border-color: #c9aa6a;
+      color: #f1eee7;
     }
 
     .music-control.playing {
-      background: rgba(201,170,106,.12);
       color: #f1eee7;
-      border-color: #c9aa6a;
+    }
+
+    .volume-symbol {
+      color: #c9aa6a;
+      font-size: 14px;
+      user-select: none;
+    }
+
+    .volume-control {
+      width: 110px;
+
+      accent-color: #c9aa6a;
+
+      cursor: pointer;
+    }
+
+    .volume-value {
+      width: 35px;
+
+      color: #9e927e;
+
+      font-family: Arial, sans-serif;
+      font-size: 10px;
+
+      text-align: right;
     }
 
     /* =========================
@@ -759,11 +788,26 @@
         padding: 45px 25px;
       }
 
+      .music-panel {
+        right: 10px;
+        bottom: 10px;
+
+        gap: 8px;
+
+        padding: 10px 11px;
+      }
+
       .music-control {
-        right: 12px;
-        bottom: 12px;
-        padding: 12px 14px;
-        font-size: 10px;
+        font-size: 9px;
+        letter-spacing: 1px;
+      }
+
+      .volume-control {
+        width: 75px;
+      }
+
+      .volume-value {
+        display: none;
       }
 
       .footer-links {
@@ -1321,23 +1365,58 @@
 </footer>
 
 
-<!-- HINTERGRUNDMUSIK -->
+<!-- =========================
+     HINTERGRUNDMUSIK
+     ========================= -->
 
-<audio id="backgroundMusic" loop preload="metadata">
+<audio
+  id="backgroundMusic"
+  loop
+  preload="metadata">
+
   <source
     src="/Still%20Sea%20Dusk.mp3"
     type="audio/mpeg">
+
 </audio>
 
-<button
-  class="music-control"
-  id="musicControl"
-  onclick="toggleMusic()">
-  ♫ MUSIK AN
-</button>
+
+<div class="music-panel">
+
+  <button
+    class="music-control"
+    id="musicControl"
+    onclick="toggleMusic()">
+    ♫ MUSIK AN
+  </button>
+
+  <span class="volume-symbol">
+    🔊
+  </span>
+
+  <input
+    class="volume-control"
+    id="volumeControl"
+    type="range"
+    min="0"
+    max="100"
+    value="22"
+    aria-label="Lautstärke">
+
+  <span
+    class="volume-value"
+    id="volumeValue">
+    22%
+  </span>
+
+</div>
 
 
 <script>
+
+/* =========================
+   ORTE
+   ========================= */
 
 function showPlace(placeId, clickedElement) {
 
@@ -1376,6 +1455,7 @@ function showPlace(placeId, clickedElement) {
 
 
   target.classList.add("active");
+
   clickedElement.classList.add("active");
 
   details.classList.add("open");
@@ -1420,7 +1500,9 @@ function closePlace() {
 }
 
 
-/* HINTERGRUNDMUSIK */
+/* =========================
+   MUSIK
+   ========================= */
 
 const backgroundMusic =
   document.getElementById("backgroundMusic");
@@ -1428,9 +1510,81 @@ const backgroundMusic =
 const musicControl =
   document.getElementById("musicControl");
 
+const volumeControl =
+  document.getElementById("volumeControl");
 
-backgroundMusic.volume = 0.22;
+const volumeValue =
+  document.getElementById("volumeValue");
 
+
+/* GESPEICHERTE LAUTSTÄRKE LADEN */
+
+let savedVolume =
+  localStorage.getItem("runevakarVolume");
+
+
+if (savedVolume === null) {
+
+  savedVolume = 0.22;
+
+} else {
+
+  savedVolume = parseFloat(savedVolume);
+
+}
+
+
+if (
+  isNaN(savedVolume) ||
+  savedVolume < 0 ||
+  savedVolume > 1
+) {
+
+  savedVolume = 0.22;
+
+}
+
+
+backgroundMusic.volume =
+  savedVolume;
+
+
+volumeControl.value =
+  Math.round(savedVolume * 100);
+
+
+volumeValue.textContent =
+  Math.round(savedVolume * 100) + "%";
+
+
+/* LAUTSTÄRKE ÄNDERN */
+
+volumeControl.addEventListener(
+  "input",
+  function() {
+
+    const newVolume =
+      volumeControl.value / 100;
+
+
+    backgroundMusic.volume =
+      newVolume;
+
+
+    volumeValue.textContent =
+      volumeControl.value + "%";
+
+
+    localStorage.setItem(
+      "runevakarVolume",
+      newVolume
+    );
+
+  }
+);
+
+
+/* MUSIK AN / AUS */
 
 function toggleMusic() {
 
@@ -1443,6 +1597,12 @@ function toggleMusic() {
           "♫ MUSIK AUS";
 
         musicControl.classList.add("playing");
+
+
+        localStorage.setItem(
+          "runevakarMusicEnabled",
+          "true"
+        );
 
       })
       .catch(function(error) {
@@ -1458,12 +1618,61 @@ function toggleMusic() {
 
     backgroundMusic.pause();
 
+
     musicControl.textContent =
       "♫ MUSIK AN";
 
+
     musicControl.classList.remove("playing");
 
+
+    localStorage.setItem(
+      "runevakarMusicEnabled",
+      "false"
+    );
+
   }
+
+}
+
+
+/* =========================
+   MUSIKSTATUS LADEN
+   ========================= */
+
+const musicEnabled =
+  localStorage.getItem(
+    "runevakarMusicEnabled"
+  );
+
+
+if (musicEnabled === "true") {
+
+  /*
+    Browser blockieren häufig automatischen Ton.
+
+    Deshalb versuchen wir den Start.
+    Falls der Browser ihn blockiert,
+    bleibt einfach "MUSIK AN" sichtbar.
+  */
+
+  backgroundMusic.play()
+    .then(function() {
+
+      musicControl.textContent =
+        "♫ MUSIK AUS";
+
+      musicControl.classList.add("playing");
+
+    })
+    .catch(function() {
+
+      musicControl.textContent =
+        "♫ MUSIK AN";
+
+      musicControl.classList.remove("playing");
+
+    });
 
 }
 
