@@ -53,8 +53,8 @@
       width: 100%;
       z-index: 1000;
 
-      background: rgba(5, 8, 10, .94);
-      border-bottom: 1px solid rgba(201, 170, 106, .32);
+      background: rgba(5,8,10,.94);
+      border-bottom: 1px solid rgba(201,170,106,.32);
       backdrop-filter: blur(10px);
     }
 
@@ -102,7 +102,7 @@
       gap: 5px;
       margin-left: 10px;
       padding-left: 16px;
-      border-left: 1px solid rgba(201, 170, 106, .45);
+      border-left: 1px solid rgba(201,170,106,.45);
     }
 
     .languages .active {
@@ -117,12 +117,12 @@
       display: none;
       width: 46px;
       height: 46px;
-
       cursor: pointer;
+
       align-items: center;
       justify-content: center;
 
-      border: 1px solid rgba(201, 170, 106, .55);
+      border: 1px solid rgba(201,170,106,.55);
 
       font-family: Arial, sans-serif;
       font-size: 27px;
@@ -134,30 +134,31 @@
 
 
     /* =========================
-       HERO
+       HERO / ALDRYN
     ========================= */
 
     .hero {
-      position: relative;
       padding-top: 70px;
       background: #070a0c;
       overflow: hidden;
     }
 
-    .hero-picture {
+    .hero-image {
       position: relative;
       width: 100%;
-      height: min(68vw, 760px);
-      min-height: 500px;
-
-     background-image: url("ChatGPT%20Bild%2031.%20Aug.%202026,%2011_18_20.png");
-      background-size: cover;
-      background-position: center center;
-      background-repeat: no-repeat;
+      max-height: 720px;
+      overflow: hidden;
     }
 
-    .hero-picture::after {
+    .hero-image img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    .hero-image::after {
       content: "";
+
       position: absolute;
       inset: 0;
 
@@ -165,28 +166,33 @@
         linear-gradient(
           to bottom,
           rgba(7,10,12,0) 0%,
-          rgba(7,10,12,0) 48%,
-          rgba(7,10,12,.20) 62%,
-          rgba(7,10,12,.70) 82%,
+          rgba(7,10,12,0) 55%,
+          rgba(7,10,12,.20) 68%,
+          rgba(7,10,12,.72) 88%,
           #070a0c 100%
         );
+
+      pointer-events: none;
     }
 
     .hero-content {
       position: relative;
       z-index: 2;
 
-      max-width: 1050px;
-      margin: -230px auto 0;
-      padding: 0 25px 80px;
+      max-width: 1000px;
+      margin: -145px auto 0;
+
+      padding: 0 25px 75px;
 
       text-align: center;
     }
 
     .runes {
       color: #c9aa6a;
-      font-size: 24px;
+
+      font-size: 23px;
       letter-spacing: 14px;
+
       margin-bottom: 20px;
 
       text-shadow:
@@ -195,7 +201,7 @@
     }
 
     h1 {
-      font-size: clamp(52px, 7vw, 92px);
+      font-size: clamp(52px, 7vw, 90px);
       letter-spacing: 9px;
       font-weight: normal;
 
@@ -254,9 +260,11 @@
 
     .section-kicker {
       color: #c9aa6a;
+
       font-size: 18px;
       letter-spacing: 4px;
       text-transform: uppercase;
+
       margin-bottom: 38px;
     }
 
@@ -265,6 +273,7 @@
       margin: auto;
 
       color: #cec9be;
+
       font-size: 19px;
       line-height: 1.9;
     }
@@ -338,12 +347,15 @@
 
     .book-cover {
       display: block;
+
       width: 100%;
       max-width: 300px;
+
       margin: auto;
 
-      border: 1px solid rgba(201, 170, 106, .55);
-      box-shadow: 0 18px 50px rgba(0, 0, 0, .45);
+      border: 1px solid rgba(201,170,106,.55);
+
+      box-shadow: 0 18px 50px rgba(0,0,0,.45);
     }
 
     .book-info h3 {
@@ -365,6 +377,7 @@
 
     footer {
       padding: 45px 20px;
+
       text-align: center;
 
       border-top: 1px solid #34302a;
@@ -426,14 +439,17 @@
 
       .mobile-nav {
         position: absolute;
+
         top: 62px;
         left: 0;
+
         width: 100%;
 
         padding: 18px 20px 25px;
 
-        background: rgba(5, 8, 10, .99);
-        border-bottom: 1px solid rgba(201, 170, 106, .42);
+        background: rgba(5,8,10,.99);
+
+        border-bottom: 1px solid rgba(201,170,106,.42);
       }
 
       #menu-toggle:checked ~ .mobile-nav {
@@ -449,6 +465,7 @@
 
         font-family: Arial, sans-serif;
         font-size: 15px;
+
         letter-spacing: 2px;
         text-transform: uppercase;
 
@@ -463,6 +480,7 @@
 
       .mobile-languages a {
         flex: 1;
+
         text-align: center;
 
         border: 1px solid rgba(201,170,106,.4);
@@ -477,28 +495,30 @@
         padding-top: 62px;
       }
 
-      .hero-picture {
-        height: 62vw;
-        min-height: 280px;
-
-        background-size: cover;
-        background-position: center center;
+      .hero-image {
+        max-height: none;
       }
 
-      .hero-picture::after {
+      .hero-image img {
+        width: 100%;
+        height: auto;
+      }
+
+      .hero-image::after {
         background:
           linear-gradient(
             to bottom,
             rgba(7,10,12,0) 0%,
-            rgba(7,10,12,0) 40%,
-            rgba(7,10,12,.35) 62%,
-            rgba(7,10,12,.85) 83%,
+            rgba(7,10,12,0) 45%,
+            rgba(7,10,12,.30) 65%,
+            rgba(7,10,12,.82) 86%,
             #070a0c 100%
           );
       }
 
       .hero-content {
-        margin-top: -80px;
+        margin-top: -55px;
+
         padding: 0 18px 55px;
       }
 
@@ -555,6 +575,7 @@
   </style>
 </head>
 
+
 <body>
 
 
@@ -562,7 +583,10 @@
 
   <div class="nav-inner">
 
-    <a href="/" class="brand">RUNEVAKAR</a>
+    <a href="/" class="brand">
+      RUNEVAKAR
+    </a>
+
 
     <nav class="desktop-nav">
 
@@ -574,10 +598,13 @@
       <a href="/gallery.html">Galerie</a>
       <a href="/shop.html">Shop</a>
 
+
       <div class="languages">
+
         <a href="/" class="active">DE</a>
         <a href="/en.html">EN</a>
         <a href="/no.html">NO</a>
+
       </div>
 
     </nav>
@@ -590,7 +617,9 @@
       for="menu-toggle"
       class="menu-button"
       aria-label="Menü öffnen">
+
       ☰
+
     </label>
 
 
@@ -604,10 +633,13 @@
       <a href="/gallery.html">Galerie</a>
       <a href="/shop.html">Shop</a>
 
+
       <div class="mobile-languages">
+
         <a href="/" class="active">DE</a>
         <a href="/en.html">EN</a>
         <a href="/no.html">NO</a>
+
       </div>
 
     </nav>
@@ -620,28 +652,48 @@
 
 <section class="hero">
 
-  <div class="hero-picture"></div>
+
+  <div class="hero-image">
+
+    <img
+      src="aldryn1.png"
+      alt="Die Welt von Aldryn">
+
+  </div>
+
 
   <div class="hero-content">
 
     <div class="runes">
+
       ᚱ ᚢ ᚾ ᛖ ᚹ ᚨ ᚲ ᚨ ᚱ
+
     </div>
+
 
     <h1>
+
       RUNEVAKAR
+
     </h1>
 
+
     <div class="subtitle">
+
       MUSIK AUS DER WELT VON ALDRYN
+
     </div>
 
+
     <div class="quote">
+
       „Aus Geschichten wird Musik.<br>
       Aus Musik wird eine Welt.“
+
     </div>
 
   </div>
+
 
 </section>
 
@@ -650,17 +702,26 @@
 <section class="section dark">
 
   <h2 class="section-title">
+
     CHRONICLES OF ALDRYN
+
   </h2>
 
+
   <div class="section-kicker">
+
     DAS NEUE ALBUM
+
   </div>
 
+
   <p class="section-text">
+
     Kraftvolle nordische Klanglandschaften,
     cineastisches Storytelling und Geschichten aus der Welt von Aldryn.
+
   </p>
+
 
   <div class="buttons">
 
@@ -668,20 +729,28 @@
       class="button"
       href="https://open.spotify.com/intl-de/album/4clftkIcRSf660FCGVtqnO"
       target="_blank">
+
       SPOTIFY
+
     </a>
+
 
     <a
       class="button"
       href="https://distrokid.com/hyperfollow/runevakar/chronicles-of-aldryn/"
       target="_blank">
+
       ALBUM ANHÖREN
+
     </a>
+
 
     <a
       class="button"
       href="/music.html">
+
       MEHR MUSIK
+
     </a>
 
   </div>
@@ -693,24 +762,35 @@
 <section class="section dark-alt">
 
   <h2 class="section-title">
+
     RUNEVAKAR
+
   </h2>
 
+
   <div class="section-kicker">
+
     FIVE VOICES · ONE JOURNEY · ONE WORLD
+
   </div>
 
+
   <p class="section-text">
+
     Fünf Musiker. Eine gemeinsame Welt.
     Runevakar verbindet nordische Klanglandschaften,
     kraftvolle Stimmen und cineastisches Storytelling
     mit den Geschichten von Aldryn.
+
   </p>
+
 
   <a
     class="small-button"
     href="/band.html">
+
     DIE BAND ENTDECKEN
+
   </a>
 
 </section>
@@ -720,12 +800,18 @@
 <section class="section dark">
 
   <h2 class="section-title">
+
     DIE CHRONIKEN VON ALDRYN
+
   </h2>
 
+
   <div class="section-kicker">
+
     DEMNÄCHST ALS ROMAN
+
   </div>
+
 
   <div class="book-preview">
 
@@ -734,23 +820,32 @@
       alt="Die Chroniken von Aldryn – Das letzte Licht von Norðr"
       class="book-cover">
 
+
     <div class="book-info">
 
       <h3>
+
         DAS LETZTE LICHT VON NORÐR
+
       </h3>
 
+
       <p>
+
         Die Welt hinter der Musik wird zur Geschichte.
         Eine Reise nach Aldryn, in eine Welt aus alten Legenden,
         dunklen Segeln und Geheimnissen, die längst hätten
         vergessen sein sollen.
+
       </p>
+
 
       <a
         class="small-button"
         href="/book.html">
+
         MEHR ZUM BUCH
+
       </a>
 
     </div>
@@ -764,9 +859,17 @@
 <footer>
 
   <div class="footer-links">
-    <a href="/impressum.html">IMPRESSUM</a>
-    <a href="/datenschutz.html">DATENSCHUTZ</a>
+
+    <a href="/impressum.html">
+      IMPRESSUM
+    </a>
+
+    <a href="/datenschutz.html">
+      DATENSCHUTZ
+    </a>
+
   </div>
+
 
   © 2026 RUNEVAKAR · OFFIZIELLE WEBSITE
 
