@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Videos | Runevakar</title>
+
+  <meta name="description"
+        content="Offizielle Musikvideos von Runevakar aus der Welt von Aldryn.">
+
+  <meta name="robots" content="noindex, nofollow">
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background: #070a0c;
+      color: #f1eee7;
+      font-family: Georgia, "Times New Roman", serif;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    .topbar {
+      background: rgba(5,8,10,.97);
+      border-bottom: 1px solid rgba(201,170,106,.32);
+    }
+
+    .nav-inner {
+      max-width: 1400px;
+      margin: auto;
+      min-height: 70px;
+      padding: 0 25px;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 25px;
+    }
+
+    .brand {
+      text-decoration: none;
+      font-size: 21px;
+      letter-spacing: 4px;
+      white-space: nowrap;
+    }
+
+    .nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      align-items: center;
+    }
+
+    .nav a {
+      color: #d5d0c5;
+      text-decoration: none;
+      font-family: Arial, sans-serif;
+      font-size: 12px;
+      font-weight: bold;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+    }
+
+    .nav a:hover,
+    .nav .active {
+      color: #c9aa6a;
+    }
+
+    .page-header {
+      padding: 95px 25px 70px;
+      text-align: center;
+
+      background:
+        radial-gradient(circle at top,#182126,#080b0d 70%);
+    }
+
+    .page-header h1 {
+      font-size: clamp(40px,7vw,68px);
+      letter-spacing: 7px;
+      margin-bottom: 15px;
+    }
+
+    .page-header p {
+      color: #c9aa6a;
+      letter-spacing: 4px;
+      font-size: 16px;
+    }
+
+    .intro {
+      max-width: 850px;
+      margin: auto;
+      padding: 70px 25px 25px;
+
+      text-align: center;
+      color: #cec9be;
+      font-size: 19px;
+      line-height: 1.9;
+    }
+
+    .videos {
+      max-width: 1100px;
+      margin: auto;
+      padding: 45px 25px 100px;
+    }
+
+    .video-card {
+      padding: 55px 0;
+      border-bottom: 1px solid rgba(201,170,106,.25);
+    }
+
+    .video-card h2 {
+      text-align: center;
+      font-size: clamp(30px,5vw,46px);
+      letter-spacing: 4px;
+      margin-bottom: 12px;
+    }
+
+    .video-subtitle {
+      text-align: center;
+      color: #c9aa6a;
+      letter-spacing: 3px;
+      font-size: 15px;
+      margin-bottom: 32px;
+    }
+
+    .video-consent {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+      padding: 30px;
+
+      text-align: center;
+
+      border: 1px solid #9f844f;
+
+      background:
+        radial-gradient(circle at center,#182126,#080b0d 75%);
+    }
+
+    .video-consent h3 {
+      font-size: clamp(24px,5vw,38px);
+      letter-spacing: 3px;
+      margin-bottom: 18px;
+    }
+
+    .video-consent p {
+      max-width: 650px;
+      color: #cec9be;
+      font-size: 17px;
+      line-height: 1.7;
+      margin-bottom: 28px;
+    }
+
+    .load-video {
+      padding: 16px 26px;
+
+      border: 1px solid #9f844f;
+      background: transparent;
+
+      color: #fff;
+
+      font-family: Arial, sans-serif;
+      font-size: 13px;
+      font-weight: bold;
+      letter-spacing: 2px;
+
+      cursor: pointer;
+
+      transition: .25s;
+    }
+
+    .load-video:hover {
+      background: #9f844f;
+      color: #070a0c;
+    }
+
+    .video-wrapper {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+
+      border: 1px solid #9f844f;
+      background: #000;
+
+      box-shadow: 0 15px 45px rgba(0,0,0,.5);
+    }
+
+    .video-wrapper iframe {
+      width: 100%;
+      height: 100%;
+      display: block;
+      border: 0;
+    }
+
+    .youtube-button {
+      display: block;
+      width: min(100%,400px);
+
+      margin: 25px auto 0;
+      padding: 17px 20px;
+
+      border: 1px solid #9f844f;
+
+      color: #fff;
+      text-decoration: none;
+      text-align: center;
+
+      letter-spacing: 2px;
+      font-weight: bold;
+
+      transition: .25s;
+    }
+
+    .youtube-button:hover {
+      background: #9f844f;
+      color: #070a0c;
+    }
+
+    .privacy-note {
+      max-width: 700px;
+      margin: 20px auto 0;
+
+      color: #8f887c;
+
+      font-family: Arial,sans-serif;
+      font-size: 12px;
+      line-height: 1.6;
+
+      text-align: center;
+    }
+
+    footer {
+      padding: 45px 20px;
+
+      text-align: center;
+
+      border-top: 1px solid #34302a;
+
+      background: #050708;
+      color: #9e927e;
+
+      letter-spacing: 2px;
+      font-size: 13px;
+    }
+
+    .footer-links {
+      margin-bottom: 20px;
+
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .footer-links a {
+      color: #c9aa6a;
+      text-decoration: none;
+
+      font-family: Arial,sans-serif;
+      font-size: 12px;
+      font-weight: bold;
+      letter-spacing: 1.5px;
+    }
+
+    .footer-links a:hover {
+      color: #f1eee7;
+    }
+
+    @media(max-width:760px) {
+
+      .nav-inner {
+        flex-direction: column;
+        padding: 20px;
+      }
+
+      .nav {
+        justify-content: center;
+        gap: 14px;
+      }
+
+      .nav a {
+        font-size: 11px;
+      }
+
+      .page-header {
+        padding: 65px 20px 50px;
+      }
+
+      .page-header h1 {
+        font-size: 39px;
+        letter-spacing: 4px;
+      }
+
+      .intro {
+        padding: 55px 20px 20px;
+        font-size: 18px;
+      }
+
+      .videos {
+        padding: 25px 20px 70px;
+      }
+
+      .video-consent {
+        padding: 22px;
+      }
+
+      .video-consent p {
+        font-size: 16px;
+      }
+
+      .load-video,
+      .youtube-button {
+        width: 100%;
+      }
+
+      .footer-links {
+        flex-direction: column;
+        gap: 12px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header class="topbar">
+
+  <div class="nav-inner">
+
+    <a href="/test/" class="brand">
+      RUNEVAKAR
+    </a>
+
+    <nav class="nav">
+
+      <a href="/test/">
+        Start
+      </a>
+
+      <a href="/test/music.html">
+        Musik
+      </a>
+
+      <a href="/test/videos.html" class="active">
+        Videos
+      </a>
+
+      <a href="/test/band.html">
+        Band
+      </a>
+
+      <a href="/test/aldryn.html">
+        Aldryn
+      </a>
+
+      <a href="/test/book.html">
+        Buch
+      </a>
+
+      <a href="/test/gallery.html">
+        Galerie
+      </a>
+
+      <a href="/test/shop.html">
+        Shop
+      </a>
+
+    </nav>
+
+  </div>
+
+</header>
+
+
+<section class="page-header">
+
+  <h1>
+    VIDEOS
+  </h1>
+
+  <p>
+    OFFIZIELLE MUSIKVIDEOS VON RUNEVAKAR
+  </p>
+
+</section>
+
+
+<section class="intro">
+
+  <p>
+    Musik, Bilder und Geschichten aus der Welt von Runevakar.
+    Hier findest du unsere offiziellen Musikvideos und weitere
+    audiovisuelle Veröffentlichungen.
+  </p>
+
+</section>
+
+
+<main class="videos">
+
+
+  <article class="video-card">
+
+    <h2>
+      LEGENDS NEVER SLEEP
+    </h2>
+
+    <div class="video-subtitle">
+      OFFICIAL MUSIC VIDEO
+    </div>
+
+
+    <div class="video-consent"
+         id="video-consent-1">
+
+      <h3>
+        YOUTUBE-VIDEO
+      </h3>
+
+      <p>
+        Dieses Video wird von YouTube bereitgestellt.
+        Erst wenn du das Video aktiv lädst, wird eine Verbindung
+        zu YouTube bzw. Google hergestellt.
+      </p>
+
+      <button
+        type="button"
+        class="load-video"
+        data-video-id="waYs0XfP2HY"
+        data-target="video-consent-1">
+
+        YOUTUBE-VIDEO LADEN
+
+      </button>
+
+    </div>
+
+
+    <a
+      class="youtube-button"
+      href="https://youtu.be/waYs0XfP2HY"
+      target="_blank"
+      rel="noopener noreferrer">
+
+      DIREKT AUF YOUTUBE ANSEHEN
+
+    </a>
+
+
+    <p class="privacy-note">
+      Beim Laden oder Öffnen des Videos gelten die Datenschutzbestimmungen
+      des jeweiligen Anbieters. Weitere Informationen findest du in unserer
+      Datenschutzerklärung.
+    </p>
+
+  </article>
+
+
+</main>
+
+
+<footer>
+
+  <div class="footer-links">
+
+    <a href="/impressum.html">
+      IMPRESSUM
+    </a>
+
+    <a href="/datenschutz.html">
+      DATENSCHUTZ
+    </a>
+
+  </div>
+
+  © 2026 RUNEVAKAR · OFFIZIELLE WEBSITE
+
+</footer>
+
+
+<script>
+  const buttons = document.querySelectorAll(".load-video");
+
+  buttons.forEach(function(button) {
+    button.addEventListener("click", function() {
+
+      const videoId = button.getAttribute("data-video-id");
+      const targetId = button.getAttribute("data-target");
+      const target = document.getElementById(targetId);
+
+      if (!videoId || !target) {
+        return;
+      }
+
+      const wrapper = document.createElement("div");
+      wrapper.className = "video-wrapper";
+
+      const iframe = document.createElement("iframe");
+
+      iframe.src =
+        "https://www.youtube-nocookie.com/embed/" +
+        encodeURIComponent(videoId) +
+        "?autoplay=1";
+
+      iframe.title = "Runevakar – Legends Never Sleep";
+
+      iframe.allow =
+        "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
+
+      iframe.allowFullscreen = true;
+
+      wrapper.appendChild(iframe);
+
+      target.replaceWith(wrapper);
+
+    });
+  });
+</script>
+
+</body>
+</html>
