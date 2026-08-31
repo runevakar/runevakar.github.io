@@ -98,11 +98,9 @@
 
     .aldryn-header img {
       display: block;
-
       width: 100%;
       max-width: 1536px;
       height: auto;
-
       margin: 0 auto;
     }
 
@@ -131,18 +129,14 @@
 
     .intro-symbol {
       color: #c9aa6a;
-
       font-size: 32px;
       margin-bottom: 25px;
     }
 
     .intro h1 {
       font-size: clamp(36px, 6vw, 55px);
-
       font-weight: normal;
-
       letter-spacing: 6px;
-
       margin-bottom: 18px;
     }
 
@@ -161,7 +155,6 @@
 
     .intro p {
       color: #cec9be;
-
       font-size: 19px;
       line-height: 1.9;
     }
@@ -194,12 +187,9 @@
 
     .section h2 {
       font-size: clamp(34px, 6vw, 54px);
-
       font-weight: normal;
-
       letter-spacing: 5px;
       line-height: 1.2;
-
       margin-bottom: 17px;
     }
 
@@ -246,6 +236,25 @@
           rgba(25,34,39,.35),
           rgba(5,8,10,.97)
         );
+
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    .place-land-aldryn {
+      background:
+        linear-gradient(
+          to bottom,
+          rgba(5,8,10,.12) 0%,
+          rgba(5,8,10,.28) 45%,
+          rgba(5,8,10,.92) 100%
+        ),
+        url("/Die%20L%C3%A4nder%20von%20Aldryn(1).png");
+
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
     }
 
     .place::before {
@@ -274,7 +283,7 @@
     }
 
     .place-number {
-      color: #8f7a50;
+      color: #c9aa6a;
 
       font-family: Arial, sans-serif;
       font-size: 11px;
@@ -282,16 +291,24 @@
       letter-spacing: 3px;
 
       margin-bottom: 12px;
+
+      text-shadow:
+        0 2px 4px #000,
+        0 0 8px #000;
     }
 
     .place h3 {
-      color: #e1dbcf;
+      color: #f1eee7;
 
       font-size: 18px;
       font-weight: normal;
 
       letter-spacing: 2px;
       line-height: 1.4;
+
+      text-shadow:
+        0 2px 4px #000,
+        0 0 10px #000;
     }
 
 
@@ -317,15 +334,12 @@
 
     .mystery-symbol {
       color: #c9aa6a;
-
       font-size: 45px;
-
       margin-bottom: 25px;
     }
 
     .mystery-box p {
       color: #cec9be;
-
       font-size: 18px;
       line-height: 1.9;
     }
@@ -362,9 +376,7 @@
 
     .path-symbol {
       color: #c9aa6a;
-
       font-size: 36px;
-
       margin-bottom: 22px;
     }
 
@@ -379,7 +391,6 @@
 
     .path p {
       color: #c6c0b5;
-
       font-size: 17px;
       line-height: 1.8;
     }
@@ -506,7 +517,6 @@
 
       .nav-inner {
         flex-direction: column;
-
         padding: 22px 18px;
       }
 
@@ -560,7 +570,7 @@
       }
 
       .place {
-        min-height: 130px;
+        min-height: 220px;
       }
 
       .mystery-box {
@@ -722,7 +732,7 @@
 
     <div class="places">
 
-      <div class="place">
+      <div class="place place-land-aldryn">
 
         <div class="place-inner">
 
@@ -731,7 +741,7 @@
           </div>
 
           <h3>
-            INSEL ALDRYN
+            DAS LAND ALDRYN
           </h3>
 
         </div>
@@ -799,7 +809,7 @@
           </div>
 
           <h3>
-            DER BERG
+            DIE KÖNIGSSTRASSE
           </h3>
 
         </div>
@@ -883,7 +893,6 @@
 
     <div class="paths">
 
-
       <div class="path">
 
         <div class="path-symbol">
@@ -938,7 +947,6 @@
         </a>
 
       </div>
-
 
     </div>
 
