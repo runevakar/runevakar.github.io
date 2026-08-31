@@ -1,1 +1,994 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <title>Aldryn | Runevakar</title>
+
+  <meta name="description"
+        content="Entdecke Aldryn – die Welt hinter der Musik von Runevakar und dem Roman Die Chroniken von Aldryn.">
+
+  <meta name="robots" content="noindex, nofollow">
+
+  <style>
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: #070a0c;
+      color: #f1eee7;
+      font-family: Georgia, "Times New Roman", serif;
+    }
+
+    a {
+      color: inherit;
+    }
+
+
+    /* =========================
+       NAVIGATION
+       ========================= */
+
+    .topbar {
+      background: #050708;
+      border-bottom: 1px solid rgba(201,170,106,.35);
+    }
+
+    .nav-inner {
+      max-width: 1400px;
+      margin: auto;
+      min-height: 70px;
+      padding: 0 25px;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 25px;
+    }
+
+    .brand {
+      text-decoration: none;
+      font-size: 21px;
+      letter-spacing: 4px;
+      white-space: nowrap;
+    }
+
+    .nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      align-items: center;
+    }
+
+    .nav a {
+      color: #d5d0c5;
+      text-decoration: none;
+
+      font-family: Arial, sans-serif;
+      font-size: 12px;
+      font-weight: bold;
+
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+    }
+
+    .nav a:hover,
+    .nav .active {
+      color: #c9aa6a;
+    }
+
+
+    /* =========================
+       ALDRYN TITELBILD
+       ========================= */
+
+    .aldryn-header {
+      width: 100%;
+      background: #050708;
+    }
+
+    .aldryn-header img {
+      display: block;
+
+      width: 100%;
+      max-width: 1536px;
+      height: auto;
+
+      margin: 0 auto;
+    }
+
+
+    /* =========================
+       EINLEITUNG
+       ========================= */
+
+    .intro {
+      padding: 90px 25px;
+
+      text-align: center;
+
+      background:
+        linear-gradient(
+          to bottom,
+          #070a0c,
+          #0b0f12
+        );
+    }
+
+    .intro-inner {
+      max-width: 900px;
+      margin: auto;
+    }
+
+    .intro-symbol {
+      color: #c9aa6a;
+
+      font-size: 32px;
+      margin-bottom: 25px;
+    }
+
+    .intro h1 {
+      font-size: clamp(36px, 6vw, 55px);
+
+      font-weight: normal;
+
+      letter-spacing: 6px;
+
+      margin-bottom: 18px;
+    }
+
+    .kicker {
+      color: #c9aa6a;
+
+      font-family: Arial, sans-serif;
+      font-size: 12px;
+      font-weight: bold;
+
+      letter-spacing: 4px;
+      text-transform: uppercase;
+
+      margin-bottom: 35px;
+    }
+
+    .intro p {
+      color: #cec9be;
+
+      font-size: 19px;
+      line-height: 1.9;
+    }
+
+
+    /* =========================
+       ALLGEMEINE BEREICHE
+       ========================= */
+
+    .section {
+      padding: 95px 25px;
+    }
+
+    .section-inner {
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    .center {
+      text-align: center;
+    }
+
+    .dark {
+      background: #080b0d;
+    }
+
+    .dark-alt {
+      background: #0b0f12;
+    }
+
+    .section h2 {
+      font-size: clamp(34px, 6vw, 54px);
+
+      font-weight: normal;
+
+      letter-spacing: 5px;
+      line-height: 1.2;
+
+      margin-bottom: 17px;
+    }
+
+    .section-text {
+      max-width: 850px;
+      margin: auto;
+
+      color: #cec9be;
+
+      font-size: 18px;
+      line-height: 1.9;
+    }
+
+
+    /* =========================
+       ORTE VON ALDRYN
+       ========================= */
+
+    .places {
+      margin-top: 55px;
+
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 15px;
+    }
+
+    .place {
+      position: relative;
+
+      min-height: 230px;
+
+      display: flex;
+      align-items: flex-end;
+
+      padding: 25px 18px;
+
+      overflow: hidden;
+
+      border: 1px solid rgba(201,170,106,.28);
+
+      background:
+        linear-gradient(
+          to bottom,
+          rgba(25,34,39,.35),
+          rgba(5,8,10,.97)
+        );
+    }
+
+    .place::before {
+      content: "";
+
+      position: absolute;
+      inset: 0;
+
+      background:
+        radial-gradient(
+          circle at top,
+          rgba(201,170,106,.10),
+          transparent 55%
+        );
+
+      pointer-events: none;
+    }
+
+    .place-inner {
+      position: relative;
+      z-index: 2;
+
+      width: 100%;
+
+      text-align: center;
+    }
+
+    .place-number {
+      color: #8f7a50;
+
+      font-family: Arial, sans-serif;
+      font-size: 11px;
+
+      letter-spacing: 3px;
+
+      margin-bottom: 12px;
+    }
+
+    .place h3 {
+      color: #e1dbcf;
+
+      font-size: 18px;
+      font-weight: normal;
+
+      letter-spacing: 2px;
+      line-height: 1.4;
+    }
+
+
+    /* =========================
+       GEHEIMNISSE
+       ========================= */
+
+    .mystery-box {
+      max-width: 900px;
+
+      margin: 50px auto 0;
+      padding: 55px 45px;
+
+      border: 1px solid rgba(201,170,106,.35);
+
+      background:
+        radial-gradient(
+          circle at center,
+          #162026,
+          #080b0d 70%
+        );
+    }
+
+    .mystery-symbol {
+      color: #c9aa6a;
+
+      font-size: 45px;
+
+      margin-bottom: 25px;
+    }
+
+    .mystery-box p {
+      color: #cec9be;
+
+      font-size: 18px;
+      line-height: 1.9;
+    }
+
+    .mystery-box p + p {
+      margin-top: 25px;
+    }
+
+
+    /* =========================
+       ALDRYN ERLEBEN
+       ========================= */
+
+    .paths {
+      margin-top: 55px;
+
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 22px;
+    }
+
+    .path {
+      padding: 55px 38px;
+
+      border: 1px solid rgba(201,170,106,.30);
+
+      background:
+        radial-gradient(
+          circle at top,
+          #172126,
+          #090c0e 72%
+        );
+    }
+
+    .path-symbol {
+      color: #c9aa6a;
+
+      font-size: 36px;
+
+      margin-bottom: 22px;
+    }
+
+    .path h3 {
+      font-size: 27px;
+      font-weight: normal;
+
+      letter-spacing: 3px;
+
+      margin-bottom: 20px;
+    }
+
+    .path p {
+      color: #c6c0b5;
+
+      font-size: 17px;
+      line-height: 1.8;
+    }
+
+    .button {
+      display: inline-block;
+
+      margin-top: 30px;
+
+      padding: 15px 27px;
+
+      border: 1px solid #a48955;
+
+      text-decoration: none;
+
+      font-family: Arial, sans-serif;
+      font-size: 12px;
+      font-weight: bold;
+
+      letter-spacing: 2px;
+
+      transition: .25s;
+    }
+
+    .button:hover {
+      background: #a48955;
+      color: #070a0c;
+    }
+
+
+    /* =========================
+       ZITAT
+       ========================= */
+
+    .quote-section {
+      padding: 100px 25px;
+
+      text-align: center;
+
+      background:
+        linear-gradient(
+          to bottom,
+          #090d0f,
+          #050708
+        );
+    }
+
+    .quote {
+      max-width: 850px;
+
+      margin: auto;
+
+      color: #ddd7ca;
+
+      font-size: clamp(22px, 4vw, 31px);
+      font-style: italic;
+
+      line-height: 1.7;
+    }
+
+    .quote-source {
+      margin-top: 28px;
+
+      color: #8e826c;
+
+      font-family: Arial, sans-serif;
+      font-size: 11px;
+      font-weight: bold;
+
+      letter-spacing: 3px;
+      text-transform: uppercase;
+    }
+
+
+    /* =========================
+       FOOTER
+       ========================= */
+
+    footer {
+      padding: 45px 20px;
+
+      text-align: center;
+
+      border-top: 1px solid #34302a;
+
+      background: #050708;
+      color: #9e927e;
+
+      letter-spacing: 2px;
+      font-size: 13px;
+    }
+
+    .footer-links {
+      margin-bottom: 20px;
+
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 22px;
+    }
+
+    .footer-links a {
+      color: #c9aa6a;
+
+      text-decoration: none;
+
+      font-family: Arial, sans-serif;
+      font-size: 12px;
+      font-weight: bold;
+
+      letter-spacing: 1.5px;
+    }
+
+    .footer-links a:hover {
+      color: #f1eee7;
+    }
+
+
+    /* =========================
+       MOBILE
+       ========================= */
+
+    @media(max-width:850px) {
+
+      .nav-inner {
+        flex-direction: column;
+
+        padding: 22px 18px;
+      }
+
+      .brand {
+        font-size: 22px;
+        letter-spacing: 5px;
+      }
+
+      .nav {
+        justify-content: center;
+        gap: 16px 20px;
+      }
+
+      .nav a {
+        font-size: 11px;
+      }
+
+      .aldryn-header img {
+        width: 100%;
+        height: auto;
+      }
+
+      .intro {
+        padding: 65px 22px;
+      }
+
+      .intro h1 {
+        font-size: 38px;
+        letter-spacing: 4px;
+      }
+
+      .intro p {
+        font-size: 17px;
+      }
+
+      .section {
+        padding: 70px 20px;
+      }
+
+      .section h2 {
+        font-size: 34px;
+        letter-spacing: 3px;
+      }
+
+      .section-text {
+        font-size: 17px;
+      }
+
+      .places {
+        grid-template-columns: 1fr;
+      }
+
+      .place {
+        min-height: 130px;
+      }
+
+      .mystery-box {
+        padding: 40px 24px;
+      }
+
+      .mystery-box p {
+        font-size: 17px;
+      }
+
+      .paths {
+        grid-template-columns: 1fr;
+      }
+
+      .path {
+        padding: 45px 25px;
+      }
+
+      .footer-links {
+        flex-direction: column;
+        gap: 12px;
+      }
+    }
+
+  </style>
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     NAVIGATION
+     ========================= -->
+
+<header class="topbar">
+
+  <div class="nav-inner">
+
+    <a href="/test/" class="brand">
+      RUNEVAKAR
+    </a>
+
+    <nav class="nav">
+
+      <a href="/test/">
+        Start
+      </a>
+
+      <a href="/test/music.html">
+        Musik
+      </a>
+
+      <a href="/test/videos.html">
+        Videos
+      </a>
+
+      <a href="/test/band.html">
+        Band
+      </a>
+
+      <a href="/test/aldryn.html" class="active">
+        Aldryn
+      </a>
+
+      <a href="/test/book.html">
+        Buch
+      </a>
+
+      <a href="/test/gallery.html">
+        Galerie
+      </a>
+
+      <a href="/test/shop.html">
+        Shop
+      </a>
+
+    </nav>
+
+  </div>
+
+</header>
+
+
+<!-- =========================
+     ALDRYN-BILD
+     ========================= -->
+
+<section class="aldryn-header">
+
+  <img
+    src="/5F51745F-3933-4BD8-87BC-0B34960A2A44.png"
+    alt="Aldryn">
+
+</section>
+
+
+<!-- =========================
+     EINLEITUNG
+     ========================= -->
+
+<section class="intro">
+
+  <div class="intro-inner">
+
+    <div class="intro-symbol">
+      ✦
+    </div>
+
+    <h1>
+      WILLKOMMEN IN ALDRYN
+    </h1>
+
+    <div class="kicker">
+      EINE WELT ZWISCHEN MEER UND LEGENDE
+    </div>
+
+    <p>
+      Jenseits der bekannten See liegt Aldryn.
+      Eine Welt aus rauen Küsten, mächtigen Bergen,
+      alten Straßen und Geschichten,
+      deren Ursprung weit in die Vergangenheit reicht.
+    </p>
+
+    <p style="margin-top:25px;">
+      Aldryn verbindet die Musik von Runevakar
+      mit der Welt der Chroniken.
+      Orte, Menschen und Ereignisse,
+      die in den Liedern anklingen,
+      werden hier Teil einer größeren Geschichte.
+    </p>
+
+  </div>
+
+</section>
+
+
+<!-- =========================
+     ORTE
+     ========================= -->
+
+<section class="section dark-alt">
+
+  <div class="section-inner center">
+
+    <h2>
+      ORTE VON ALDRYN
+    </h2>
+
+    <div class="kicker">
+      EINE WELT, DIE NOCH WÄCHST
+    </div>
+
+    <p class="section-text">
+      Von den belebten Straßen der Stadt
+      bis zu einsamen Bergpfaden reicht eine Landschaft,
+      in der jeder Ort seine eigene Geschichte trägt.
+    </p>
+
+    <div class="places">
+
+      <div class="place">
+
+        <div class="place-inner">
+
+          <div class="place-number">
+            01
+          </div>
+
+          <h3>
+            STADT ALDRYN
+          </h3>
+
+        </div>
+
+      </div>
+
+
+      <div class="place">
+
+        <div class="place-inner">
+
+          <div class="place-number">
+            02
+          </div>
+
+          <h3>
+            DER HAFEN
+          </h3>
+
+        </div>
+
+      </div>
+
+
+      <div class="place">
+
+        <div class="place-inner">
+
+          <div class="place-number">
+            03
+          </div>
+
+          <h3>
+            DIE STEINHALLE
+          </h3>
+
+        </div>
+
+      </div>
+
+
+      <div class="place">
+
+        <div class="place-inner">
+
+          <div class="place-number">
+            04
+          </div>
+
+          <h3>
+            DIE BERGPFADE
+          </h3>
+
+        </div>
+
+      </div>
+
+
+      <div class="place">
+
+        <div class="place-inner">
+
+          <div class="place-number">
+            05
+          </div>
+
+          <h3>
+            DIE KÖNIGSSTRASSE
+          </h3>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================
+     GEHEIMNISSE
+     ========================= -->
+
+<section class="section dark">
+
+  <div class="section-inner center">
+
+    <h2>
+      DIE GEHEIMNISSE ALDRYNS
+    </h2>
+
+    <div class="kicker">
+      DIE VERGANGENHEIT IST NICHT VERSCHWUNDEN
+    </div>
+
+    <div class="mystery-box">
+
+      <div class="mystery-symbol">
+        ✥
+      </div>
+
+      <p>
+        Ein alter Kompass.
+        Eine verborgene Karte.
+        Geschichten über Wächter,
+        deren Bedeutung beinahe vergessen wurde.
+        Und schwarze Segel,
+        die dort auftauchen,
+        wo niemand sie erwartet.
+      </p>
+
+      <p>
+        Nicht jedes Geheimnis Aldryns
+        soll an dieser Stelle erklärt werden.
+        Manche Antworten liegen in den Chroniken,
+        andere in der Musik von Runevakar.
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================
+     ALDRYN ERLEBEN
+     ========================= -->
+
+<section class="section dark-alt">
+
+  <div class="section-inner center">
+
+    <h2>
+      ALDRYN ERLEBEN
+    </h2>
+
+    <div class="kicker">
+      EINE WELT · ZWEI WEGE
+    </div>
+
+    <p class="section-text">
+      Die Welt von Aldryn wird auf zwei Arten erzählt.
+      Durch Musik und durch die Chroniken.
+      Beide gehören zusammen.
+    </p>
+
+    <div class="paths">
+
+
+      <div class="path">
+
+        <div class="path-symbol">
+          ♫
+        </div>
+
+        <h3>
+          DIE MUSIK
+        </h3>
+
+        <p>
+          Runevakar erzählt von Reisen,
+          Verlust, Hoffnung, Legenden
+          und den Orten dieser Welt.
+          Die Musik ist der Klang Aldryns.
+        </p>
+
+        <a
+          href="/test/music.html"
+          class="button">
+
+          MUSIK ENTDECKEN
+
+        </a>
+
+      </div>
+
+
+      <div class="path">
+
+        <div class="path-symbol">
+          ◈
+        </div>
+
+        <h3>
+          DIE CHRONIKEN
+        </h3>
+
+        <p>
+          „Die Chroniken von Aldryn –
+          Das letzte Licht von Norðr“
+          öffnen den Weg in die Geschichte
+          dieser Welt.
+        </p>
+
+        <a
+          href="/test/book.html"
+          class="button">
+
+          ZUM BUCH
+
+        </a>
+
+      </div>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================
+     ZITAT
+     ========================= -->
+
+<section class="quote-section">
+
+  <p class="quote">
+    „Manche Orte findet man nicht,
+    weil man nach ihnen sucht.
+    Man findet sie,
+    weil der Weg irgendwann nur noch dorthin führt.“
+  </p>
+
+  <div class="quote-source">
+    DIE CHRONIKEN VON ALDRYN
+  </div>
+
+</section>
+
+
+<!-- =========================
+     FOOTER
+     ========================= -->
+
+<footer>
+
+  <div class="footer-links">
+
+    <a href="/impressum.html">
+      IMPRESSUM
+    </a>
+
+    <a href="/datenschutz.html">
+      DATENSCHUTZ
+    </a>
+
+  </div>
+
+  © 2026 RUNEVAKAR · OFFIZIELLE WEBSITE
+
+</footer>
+
+
+</body>
+</html>
