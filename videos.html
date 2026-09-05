@@ -408,7 +408,6 @@
 
 <main class="videos">
 
-
   <article class="video-card">
 
     <h2>
@@ -418,7 +417,6 @@
     <div class="video-subtitle">
       OFFICIAL MUSIC VIDEO
     </div>
-
 
     <div class="video-consent"
          id="video-consent-1">
@@ -437,6 +435,7 @@
         type="button"
         class="load-video"
         data-video-id="waYs0XfP2HY"
+        data-video-title="Runevakar – Legends Never Sleep"
         data-target="video-consent-1">
 
         YOUTUBE-VIDEO LADEN
@@ -444,7 +443,6 @@
       </button>
 
     </div>
-
 
     <a
       class="youtube-button"
@@ -456,7 +454,6 @@
 
     </a>
 
-
     <p class="privacy-note">
       Beim Laden oder Öffnen des Videos gelten die Datenschutzbestimmungen
       des jeweiligen Anbieters. Weitere Informationen findest du in unserer
@@ -465,6 +462,60 @@
 
   </article>
 
+
+  <article class="video-card">
+
+    <h2>
+      WIR SAGEN DANKE
+    </h2>
+
+    <div class="video-subtitle">
+      OFFICIAL VIDEO
+    </div>
+
+    <div class="video-consent"
+         id="video-consent-2">
+
+      <h3>
+        YOUTUBE-VIDEO
+      </h3>
+
+      <p>
+        Dieses Video wird von YouTube bereitgestellt.
+        Erst wenn du das Video aktiv lädst, wird eine Verbindung
+        zu YouTube bzw. Google hergestellt.
+      </p>
+
+      <button
+        type="button"
+        class="load-video"
+        data-video-id="h3qrTWosF8Y"
+        data-video-title="Runevakar – Wir sagen Danke"
+        data-target="video-consent-2">
+
+        YOUTUBE-VIDEO LADEN
+
+      </button>
+
+    </div>
+
+    <a
+      class="youtube-button"
+      href="https://youtu.be/h3qrTWosF8Y"
+      target="_blank"
+      rel="noopener noreferrer">
+
+      DIREKT AUF YOUTUBE ANSEHEN
+
+    </a>
+
+    <p class="privacy-note">
+      Beim Laden oder Öffnen des Videos gelten die Datenschutzbestimmungen
+      des jeweiligen Anbieters. Weitere Informationen findest du in unserer
+      Datenschutzerklärung.
+    </p>
+
+  </article>
 
 </main>
 
@@ -495,6 +546,7 @@
     button.addEventListener("click", function() {
 
       const videoId = button.getAttribute("data-video-id");
+      const videoTitle = button.getAttribute("data-video-title") || "Runevakar – YouTube-Video";
       const targetId = button.getAttribute("data-target");
       const target = document.getElementById(targetId);
 
@@ -512,7 +564,7 @@
         encodeURIComponent(videoId) +
         "?autoplay=1";
 
-      iframe.title = "Runevakar – Legends Never Sleep";
+      iframe.title = videoTitle;
 
       iframe.allow =
         "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
